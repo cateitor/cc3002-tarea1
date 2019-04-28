@@ -9,9 +9,9 @@ import java.util.ArrayList;
  * @author Catalina Rojas
  */
 public class Trainer {
-    IPokemon activePokemon;
-    ArrayList<ICard> hand;
-    ArrayList<IPokemon> bench;
+    private IPokemon activePokemon;
+    private ArrayList<ICard> hand;
+    private ArrayList<IPokemon> bench;
 
     /**
      * Creates a new Trainer
@@ -58,7 +58,7 @@ public class Trainer {
 
     /**
      * Adds a card to the hand of the Trainer.
-     * @param card
+     * @param card the card to be added.
      */
     public void addCard(ICard card){
         hand.add(card);
@@ -82,7 +82,7 @@ public class Trainer {
 
     /**
      * select the ability of the active pokemon
-     * @param index
+     * @param index the index of the attack to be selected.
      */
     public void selectAbility(int index){
         activePokemon.selectAttack(index);
@@ -100,8 +100,8 @@ public class Trainer {
 
     /**
      * Gets a card from the hand of the trainer.
-     * @param index
-     * @return
+     * @param index the index of the card to get.
+     * @return the card.
      */
     public ICard getCard(int index){
         return hand.get(index);

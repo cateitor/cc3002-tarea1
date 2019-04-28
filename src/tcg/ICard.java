@@ -7,7 +7,8 @@ package tcg;
 public interface ICard {
 
     /**
-     * plays with a energy card.
+     * Plays a card.
+     * @param trainer the trainer that plays the card.
      */
     void isPlayed(Trainer trainer);
 }

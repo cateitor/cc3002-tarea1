@@ -143,7 +143,7 @@ public abstract class AbstractPokemon implements IPokemon{
 
     @Override
     public void isPlayed(Trainer trainer) {
-        if(trainer.activePokemon==null){
+        if(trainer.getActivePokemon()==null){
             trainer.setActivePokemon(this);
         }
         else{

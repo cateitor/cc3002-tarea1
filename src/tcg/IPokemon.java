@@ -106,7 +106,8 @@ public interface IPokemon extends ICard{
     int numberOfEnergies();
 
     /**
-     * Adds an attack to the Pokemon.
+     * Adds an attack to the pokemon
+     * @param attack the attacks to be added.
      */
     void addAttack(IAttack attack);
 
@@ -116,8 +117,5 @@ public interface IPokemon extends ICard{
      */
     void addEnergy(IEnergy energy);
 
-    /**
-     * plays with a pokemon card
-     */
-    //void play();
+
 }
