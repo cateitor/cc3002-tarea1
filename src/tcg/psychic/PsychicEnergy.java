@@ -1,6 +1,5 @@
 package tcg.psychic;
 
-import tcg.AbstractEnergy;
 import tcg.IEnergy;
 import tcg.IPokemon;
 import tcg.Trainer;
@@ -9,7 +8,7 @@ import tcg.Trainer;
  * Class that represents a PsychicEnergy.
  * @author Catalina Rojas.
  */
-public class PsychicEnergy extends AbstractEnergy {
+public class PsychicEnergy implements IEnergy {
     @Override
     public boolean equals(Object obj) {
         return obj instanceof PsychicEnergy;
@@ -19,5 +18,11 @@ public class PsychicEnergy extends AbstractEnergy {
     @Override
     public void addEnergyToPokemon(IPokemon pokemon) {
         pokemon.addPsychicEnergy(this);
+    }
+
+
+    @Override
+    public void isPlayed(Trainer trainer) {
+        trainer.getActivePokemon().addPsychicEnergy(this);
     }
 }

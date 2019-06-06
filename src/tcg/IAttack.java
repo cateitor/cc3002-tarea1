@@ -5,7 +5,7 @@ package tcg;
  * base damage, descriptive text and a cost
  * @author Catalina Rojas
  */
-public interface IAttack {
+public interface IAttack extends Iability {
 
     /**
      * An attack damages a Pokemon based on the attack's base damage, it's type and the type of the

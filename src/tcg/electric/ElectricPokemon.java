@@ -18,7 +18,7 @@ public class ElectricPokemon extends AbstractPokemon {
      * @param anEnergies energies associated to the pokemon.
      * @param anAttacks attacks associated to the pokemon, maximum of 4.
      */
-    public ElectricPokemon(int aId, int anHp, ArrayList<IEnergy> anEnergies, ArrayList<IAttack> anAttacks) {
+    public ElectricPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAttack> anAttacks) {
         super(aId, anHp, anEnergies, anAttacks);
     }
 

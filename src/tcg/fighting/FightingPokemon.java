@@ -1,8 +1,8 @@
 package tcg.fighting;
 
 import tcg.AbstractPokemon;
+import tcg.EnergyCounter;
 import tcg.IAttack;
-import tcg.IEnergy;
 import tcg.grass.GrassAttack;
 import tcg.psychic.PsychicAttack;
 
@@ -21,7 +21,7 @@ public class FightingPokemon extends AbstractPokemon {
      * @param anEnergies energies associates to the pokemon.
      * @param anAttacks attacks of the pokemon, maximum of 4.
      */
-    public FightingPokemon(int aId, int anHp, ArrayList<IEnergy> anEnergies, ArrayList<IAttack> anAttacks) {
+    public FightingPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAttack> anAttacks) {
         super(aId, anHp, anEnergies, anAttacks);
     }
 

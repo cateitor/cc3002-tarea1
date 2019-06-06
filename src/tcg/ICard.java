@@ -1,7 +1,7 @@
 package tcg;
 
 /**
- * Common interface for IPokemon and IEnergy so both of them can be used as cards.
+ * Common interface for the cards.
  * @author Catalina Rojas
  */
 public interface ICard {

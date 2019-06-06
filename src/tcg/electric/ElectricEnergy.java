@@ -6,7 +6,7 @@ import tcg.*;
  *Class that represent an ElectricEnergy.
  * @author Catalina Rojas.
  */
-public class ElectricEnergy extends AbstractEnergy {
+public class ElectricEnergy implements IEnergy {
     @Override
     public boolean equals(Object obj) {
         return obj instanceof ElectricEnergy;
@@ -15,5 +15,10 @@ public class ElectricEnergy extends AbstractEnergy {
     @Override
     public void addEnergyToPokemon(IPokemon pokemon) {
         pokemon.addElectricEnergy(this);
+    }
+
+    @Override
+    public void isPlayed(Trainer trainer) {
+        trainer.getActivePokemon().addElectricEnergy(this);
     }
 }

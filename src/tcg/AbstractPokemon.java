@@ -23,6 +23,7 @@ import java.util.ArrayList;
 public abstract class AbstractPokemon implements IPokemon{
     private int id;
     private int hp;
+    private int damage;
     private EnergyCounter energyCounter;
     private ArrayList<IAttack> attacks;
     private IAttack selectedAttack=null;
@@ -65,15 +66,16 @@ public abstract class AbstractPokemon implements IPokemon{
      * @param attack the attack.
      */
     private void receiveAttack(IAttack attack) {
-        this.hp-=attack.getBaseDamage();
-        if(hp<0){
-            hp=0;
+        damage+=attack.getBaseDamage();
+        if(hp<damage){
+            damage=hp;
         }
     }
 
     @Override
     public void receiveElectricAttack(ElectricAttack electricAttack) {
         receiveAttack(electricAttack);
+
     }
 
     @Override
@@ -115,6 +117,21 @@ public abstract class AbstractPokemon implements IPokemon{
     }
 
     @Override
+    public int getCurrentHp(){
+        return hp-damage;
+    }
+
+    @Override
+    public void setDamage(int current){
+        damage = current > hp ? hp : current<0 ? 0 : current;
+    }
+
+    @Override
+    public int getDamage(){
+        return damage;
+    }
+
+    @Override
     public EnergyCounter getEnergies(){
         return energyCounter;
     }
@@ -131,8 +148,7 @@ public abstract class AbstractPokemon implements IPokemon{
 
     @Override
     public boolean isDead(){
-        if(hp<=0){
-            hp=0;
+        if(hp<=damage){
             return true;
         }
         return false;

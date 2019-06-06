@@ -1,6 +1,5 @@
 package tcg.fire;
 
-import tcg.AbstractEnergy;
 import tcg.IEnergy;
 import tcg.IPokemon;
 import tcg.Trainer;
@@ -9,7 +8,7 @@ import tcg.Trainer;
  * Class that represents a Fire Energy.
  * @author Catalina Rojas
  */
-public class FireEnergy extends AbstractEnergy {
+public class FireEnergy implements IEnergy {
 
     @Override
     public boolean equals(Object obj) {
@@ -19,5 +18,10 @@ public class FireEnergy extends AbstractEnergy {
     @Override
     public void addEnergyToPokemon(IPokemon pokemon) {
         pokemon.addFireEnergy(this);
+    }
+
+    @Override
+    public void isPlayed(Trainer trainer) {
+        trainer.getActivePokemon().addFireEnergy(this);
     }
 }

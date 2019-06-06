@@ -12,6 +12,8 @@ public class Trainer {
     private IPokemon activePokemon;
     private ArrayList<ICard> hand;
     private ArrayList<IPokemon> bench;
+    private ArrayList<ICard> deck;
+    private ArrayList<ICard> discardPile;
 
     /**
      * Creates a new Trainer
@@ -20,6 +22,8 @@ public class Trainer {
         activePokemon = null;
         hand = new ArrayList<ICard>();
         bench= new ArrayList<IPokemon>();
+        discardPile= new ArrayList<ICard>();
+        deck = new ArrayList<ICard>();
     }
 
     /**
@@ -44,6 +48,14 @@ public class Trainer {
      */
     public void setBench(ArrayList<IPokemon> aBench){
         bench= aBench;
+    }
+
+    /**
+     * Sets the deck of the Trainer.
+     * @param aDeck the deck of the trainer.
+     */
+    public void setDeck(ArrayList<ICard> aDeck){
+        deck= aDeck;
     }
 
     /**
@@ -79,6 +91,7 @@ public class Trainer {
     public ArrayList<IPokemon> getBench(){
         return bench;
     }
+
 
     /**
      * select the ability of the active pokemon
@@ -132,12 +145,25 @@ public class Trainer {
         return activePokemon;
     }
 
+    /**
+     * Gets the discard pile of the trainer.
+     * @return discardPile.
+     */
+    public ArrayList<ICard> getDiscardPile(){
+        return discardPile;
+    }
+
+    public void drawCard(){
+        hand.add(deck.get(0));
+    }
+
 
     /**
      * If the active pokemon is out of combat, select the first pokemon of the bench.
      */
     public void changeActivePokemon(){
         if(activePokemon.isDead()){
+            discardPile.add(activePokemon);
             setActivePokemon(bench.get(0));
             bench.remove(bench.get(0));
         }
@@ -146,5 +172,6 @@ public class Trainer {
     public void useAbility(Trainer adversary){
         activePokemon.useAbility(adversary);
     }
+
 
 }

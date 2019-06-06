@@ -5,7 +5,7 @@ import tcg.*;
 /**
  * Class that represents a FightingEnergy.
  */
-public class FightingEnergy extends AbstractEnergy {
+public class FightingEnergy implements IEnergy {
 
     @Override
     public boolean equals(Object obj) {
@@ -15,5 +15,10 @@ public class FightingEnergy extends AbstractEnergy {
     @Override
     public void addEnergyToPokemon(IPokemon pokemon) {
         pokemon.addFightingEnergy(this);
+    }
+
+    @Override
+    public void isPlayed(Trainer trainer) {
+        trainer.getActivePokemon().addFightingEnergy(this);
     }
 }

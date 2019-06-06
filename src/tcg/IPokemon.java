@@ -87,6 +87,12 @@ public interface IPokemon extends ICard{
      */
     int getId();
 
+    int getCurrentHp();
+
+    void setDamage(int current);
+
+    int getDamage();
+
     /**
      * Return the energies that are associated to the pokemon.
      * @return energyCounter

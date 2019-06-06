@@ -1,9 +1,9 @@
 package tcg.water;
 
 import tcg.AbstractPokemon;
+import tcg.EnergyCounter;
 import tcg.electric.ElectricAttack;
 import tcg.IAttack;
-import tcg.IEnergy;
 import tcg.fighting.FightingAttack;
 import tcg.grass.GrassAttack;
 
@@ -21,7 +21,7 @@ public class WaterPokemon extends AbstractPokemon {
      * @param anEnergies energies associated to the pokeomon.
      * @param anAttacks attacks associated to the pokemon, maximum of 4.
      */
-    public WaterPokemon(int aId, int anHp, ArrayList<IEnergy> anEnergies, ArrayList<IAttack> anAttacks) {
+    public WaterPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAttack> anAttacks) {
         super(aId, anHp, anEnergies, anAttacks);
     }
 
