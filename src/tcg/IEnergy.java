@@ -5,4 +5,9 @@ package tcg;
  * @author Catalina Rojas
  */
 public interface IEnergy extends ICard{
+
+    /**
+     * Plays a energy card over Trainer's active Pokemon
+     */
+    public void addEnergyToPokemon(IPokemon pokemon);
 }

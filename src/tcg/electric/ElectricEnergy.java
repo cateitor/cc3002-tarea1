@@ -1,9 +1,6 @@
 package tcg.electric;
 
-import tcg.AbstractEnergy;
-import tcg.ICard;
-import tcg.IEnergy;
-import tcg.Trainer;
+import tcg.*;
 
 /**
  *Class that represent an ElectricEnergy.
@@ -15,4 +12,8 @@ public class ElectricEnergy extends AbstractEnergy {
         return obj instanceof ElectricEnergy;
     }
 
+    @Override
+    public void addEnergyToPokemon(IPokemon pokemon) {
+        pokemon.addElectricEnergy(this);
+    }
 }

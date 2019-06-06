@@ -2,6 +2,7 @@ package tcg.fire;
 
 import tcg.AbstractEnergy;
 import tcg.IEnergy;
+import tcg.IPokemon;
 import tcg.Trainer;
 
 /**
@@ -15,4 +16,8 @@ public class FireEnergy extends AbstractEnergy {
         return obj instanceof FireEnergy;
     }
 
+    @Override
+    public void addEnergyToPokemon(IPokemon pokemon) {
+        pokemon.addFireEnergy(this);
+    }
 }

@@ -2,6 +2,7 @@ package tcg.water;
 
 import tcg.AbstractEnergy;
 import tcg.IEnergy;
+import tcg.IPokemon;
 import tcg.Trainer;
 
 /**
@@ -15,4 +16,8 @@ public class WaterEnergy extends AbstractEnergy {
         return obj instanceof WaterEnergy;
     }
 
+    @Override
+    public void addEnergyToPokemon(IPokemon pokemon) {
+        pokemon.addWaterEnergy(this);
+    }
 }

@@ -115,13 +115,6 @@ public class Trainer {
         return activePokemon.isDead();
     }
 
-    /**
-     * Selects an attack of the active pokemon.
-     * @param index the selected attack.
-     */
-    public void selectActivePokemonAttack(int index) {
-        activePokemon.selectAttack(index);
-    }
 
     /**
      * Gets the current selected attack for the active pokemon.
@@ -149,4 +142,9 @@ public class Trainer {
             bench.remove(bench.get(0));
         }
     }
+
+    public void useAbility(Trainer adversary){
+        activePokemon.useAbility(adversary);
+    }
+
 }

@@ -1,9 +1,6 @@
 package tcg.fighting;
 
-import tcg.AbstractEnergy;
-import tcg.ICard;
-import tcg.IEnergy;
-import tcg.Trainer;
+import tcg.*;
 
 /**
  * Class that represents a FightingEnergy.
@@ -15,4 +12,8 @@ public class FightingEnergy extends AbstractEnergy {
         return obj instanceof FightingEnergy;
     }
 
+    @Override
+    public void addEnergyToPokemon(IPokemon pokemon) {
+        pokemon.addFightingEnergy(this);
+    }
 }

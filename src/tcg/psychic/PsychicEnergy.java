@@ -2,6 +2,7 @@ package tcg.psychic;
 
 import tcg.AbstractEnergy;
 import tcg.IEnergy;
+import tcg.IPokemon;
 import tcg.Trainer;
 
 /**
@@ -15,4 +16,8 @@ public class PsychicEnergy extends AbstractEnergy {
     }
 
 
+    @Override
+    public void addEnergyToPokemon(IPokemon pokemon) {
+        pokemon.addPsychicEnergy(this);
+    }
 }

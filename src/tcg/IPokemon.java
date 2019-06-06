@@ -1,11 +1,17 @@
 package tcg;
 
 import tcg.electric.ElectricAttack;
+import tcg.electric.ElectricEnergy;
 import tcg.fighting.FightingAttack;
+import tcg.fighting.FightingEnergy;
 import tcg.fire.FireAttack;
+import tcg.fire.FireEnergy;
 import tcg.grass.GrassAttack;
+import tcg.grass.GrassEnergy;
 import tcg.psychic.PsychicAttack;
+import tcg.psychic.PsychicEnergy;
 import tcg.water.WaterAttack;
+import tcg.water.WaterEnergy;
 
 import java.util.ArrayList;
 
@@ -83,9 +89,9 @@ public interface IPokemon extends ICard{
 
     /**
      * Return the energies that are associated to the pokemon.
-     * @return energies
+     * @return energyCounter
      */
-    ArrayList<IEnergy> getEnergies();
+    EnergyCounter getEnergies();
 
     /**
      * Return the attacks of the pokemon
@@ -99,6 +105,8 @@ public interface IPokemon extends ICard{
      */
     IAttack getSelectedAttack();
 
+
+    //I THINK I DONT NEED THIS
     /**
      * Return the total number of energies
      * @return numberOfEnergies
@@ -111,11 +119,23 @@ public interface IPokemon extends ICard{
      */
     void addAttack(IAttack attack);
 
+
     /**
-     * Adds a new energy to the pokemon.
-     * @param energy the added energy
+     * Use ability over adversary's active pokemon.
+     * @param adversary the adversary trainer.
      */
-    void addEnergy(IEnergy energy);
+    void useAbility(Trainer adversary);
 
 
+    void addElectricEnergy(ElectricEnergy electricEnergy);
+
+    void addFightingEnergy(FightingEnergy energy);
+
+    void addFireEnergy(FireEnergy energy);
+
+    void addGrassEnergy(GrassEnergy energy);
+
+    void addPsychicEnergy(PsychicEnergy energy);
+
+    void addWaterEnergy(WaterEnergy energy);
 }

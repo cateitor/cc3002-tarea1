@@ -1,11 +1,17 @@
 package tcg;
 
 import tcg.electric.ElectricAttack;
+import tcg.electric.ElectricEnergy;
 import tcg.fighting.FightingAttack;
+import tcg.fighting.FightingEnergy;
 import tcg.fire.FireAttack;
+import tcg.fire.FireEnergy;
 import tcg.grass.GrassAttack;
+import tcg.grass.GrassEnergy;
 import tcg.psychic.PsychicAttack;
+import tcg.psychic.PsychicEnergy;
 import tcg.water.WaterAttack;
+import tcg.water.WaterEnergy;
 
 import java.util.ArrayList;
 
@@ -17,7 +23,7 @@ import java.util.ArrayList;
 public abstract class AbstractPokemon implements IPokemon{
     private int id;
     private int hp;
-    private ArrayList<IEnergy> energies;
+    private EnergyCounter energyCounter;
     private ArrayList<IAttack> attacks;
     private IAttack selectedAttack=null;
 
@@ -28,12 +34,13 @@ public abstract class AbstractPokemon implements IPokemon{
      * @param anEnergies energies associated with the pokemon.
      * @param anAttacks the types of attacks of the pokemon. Maximum of 4.
      */
-    public AbstractPokemon(int aId, int anHp, ArrayList<IEnergy> anEnergies, ArrayList<IAttack> anAttacks){
+    public AbstractPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAttack> anAttacks){
         id=aId;
         hp=anHp;
-        energies=anEnergies;
-        attacks= anAttacks;
-
+        energyCounter=anEnergies;
+        for(int i=0;i<4;i++) {
+            attacks.set(i, anAttacks.get(i));
+        }
     }
 
     @Override
@@ -59,6 +66,9 @@ public abstract class AbstractPokemon implements IPokemon{
      */
     private void receiveAttack(IAttack attack) {
         this.hp-=attack.getBaseDamage();
+        if(hp<0){
+            hp=0;
+        }
     }
 
     @Override
@@ -105,8 +115,8 @@ public abstract class AbstractPokemon implements IPokemon{
     }
 
     @Override
-    public ArrayList<IEnergy> getEnergies(){
-        return energies;
+    public EnergyCounter getEnergies(){
+        return energyCounter;
     }
 
     @Override
@@ -121,12 +131,18 @@ public abstract class AbstractPokemon implements IPokemon{
 
     @Override
     public boolean isDead(){
-        return hp<=0;
+        if(hp<=0){
+            hp=0;
+            return true;
+        }
+        return false;
     }
 
+    //como retorno numero de energias por tipo?
     @Override
     public int numberOfEnergies(){
-        return energies.size();
+        //return energies.size();
+        return 0;
     }
 
     @Override
@@ -134,11 +150,6 @@ public abstract class AbstractPokemon implements IPokemon{
         if(attacks.size()<4){
             attacks.add(attack);
         }
-    }
-
-    @Override
-    public void addEnergy(IEnergy energy){
-        energies.add(energy);
     }
 
     @Override
@@ -151,4 +162,41 @@ public abstract class AbstractPokemon implements IPokemon{
         }
         trainer.getHand().remove(this);
     }
+
+    @Override
+    public void useAbility(Trainer adversary){
+        //if i think?
+        attack(adversary.getActivePokemon());
+    }
+
+    @Override
+    public void addElectricEnergy(ElectricEnergy energy){
+        energyCounter.setElectricEnergy(energyCounter.getElectricEnergy()+1);
+    }
+
+    @Override
+    public  void addFightingEnergy(FightingEnergy energy){
+        energyCounter.setFightingEnergy(energyCounter.getElectricEnergy()+1);
+    }
+
+    @Override
+    public void addFireEnergy(FireEnergy energy){
+        energyCounter.setFireEnergy(energyCounter.getFireEnergy()+1);
+    }
+
+    @Override
+    public void addGrassEnergy(GrassEnergy energy){
+        energyCounter.setGrassEnergy(energyCounter.getGrassEnergy()+1);
+    }
+
+    @Override
+    public void addPsychicEnergy(PsychicEnergy energy){
+        energyCounter.setPsychicEnergy(energyCounter.getPsychicEnergy()+1);
+    }
+
+    @Override
+    public void addWaterEnergy(WaterEnergy energy){
+        energyCounter.setWaterEnergy(energyCounter.getWaterEnergy()+1);
+    }
+
 }
