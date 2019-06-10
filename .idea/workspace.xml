@@ -5,61 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93b2df0d-a03e-4c3f-81d4-2b8819829313" name="Default Changelist" comment="added pokemon phases">
-      <change afterPath="$PROJECT_DIR$/src/tcg/IBasicPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/IPhaseOnePokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/IPhaseTwoPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/InvisibleWallAbility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/electric/AbstractElectricPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/electric/BasicElectricPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/electric/IElectricPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/electric/PhaseOneElectricPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/electric/PhaseTwoElectricPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/fighting/AbstractFightingPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/fighting/BasicFightingPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/fighting/IFightingPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/fighting/PhaseOneFightingPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/fire/AbstractFirePokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/fire/BasicFirePokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/fire/IFirePokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/fire/PhaseOneFirePokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/fire/PhaseTwoFirePokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/grass/AbstractGrassPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/grass/BasicGrassPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/grass/IGrassPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/grass/PhaseOneGrassPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/grass/PhaseTwoGrassPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/psychic/AbstractPsychicPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/psychic/BasicPsychicPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/psychic/IPsychicPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/psychic/PhaseOnePsychicPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/psychic/PhaseTwoPsychicPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/water/AbstractWaterPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/water/BasicWaterPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/water/IWaterPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/water/PhaseOneWaterPokemon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tcg/water/PhaseTwoWaterPokemon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javadoc/tcg/AbstractPokemon.html" beforeDir="false" afterPath="$PROJECT_DIR$/Javadoc/tcg/AbstractPokemon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/AbstractAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/AbstractAbility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/AbstractPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/AbstractPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/AbstractTrainerCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/AbstractTrainerCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/IAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/IAbility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/IPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/IPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/Iability.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/Trainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/Trainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/electric/ElectricAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/electric/ElectricAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/electric/ElectricPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/electric/ElectricPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/fighting/FightingAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/fighting/FightingAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/fighting/FightingPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/fighting/FightingPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/fire/FireAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/fire/FireAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/fire/FirePokemon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/grass/GrassAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/grass/GrassAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/grass/GrassPokemon.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/psychic/PsychicAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/psychic/PsychicAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/psychic/PsychicPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/psychic/PsychicPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/water/WaterAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/water/WaterAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tcg/water/WaterPokemon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tcg/Iability.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tcg/Iability.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/tcg/electric/ElectricAttackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/tcg/electric/ElectricAttackTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/tcg/electric/ElectricPokemonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/tcg/electric/ElectricPokemonTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/tcg/fighting/FightingAttackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/tcg/fighting/FightingAttackTest.java" afterDir="false" />
@@ -113,7 +60,7 @@
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="3" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.2" value="1" />
@@ -123,32 +70,34 @@
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.opened" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="JAVA/" value="1" />
           <entry key="JAVA/tcg" value="1" />
-          <entry key="java" value="340" />
+          <entry key="java" value="341" />
+          <entry key="java~Stashed changes" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="340" />
+          <entry key="JAVA" value="341" />
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="UML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="34" />
-          <entry key="java" value="23322" />
+          <entry key="java" value="23324" />
           <entry key="txt" value="97" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="23322" />
+          <entry key="JAVA" value="23324" />
           <entry key="PLAIN_TEXT" value="131" />
         </counts>
       </usages-collector>
@@ -157,41 +106,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tcg/IAbility.java">
+        <entry file="file://$PROJECT_DIR$/src/tcg/AbstractPokemon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tcg/electric/ElectricAttack.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="86">
+              <caret line="165" column="30" selection-start-line="165" selection-start-column="30" selection-end-line="165" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/tcg/AbstractPokemon.java">
+        <entry file="file://$PROJECT_DIR$/src/tcg/IAbility.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="167" column="23" selection-start-line="167" selection-start-column="23" selection-end-line="167" selection-end-column="23" />
-              <folding>
-                <element signature="e#3484#3485#0" expanded="true" />
-                <element signature="e#3514#3515#0" expanded="true" />
-                <element signature="e#3569#3570#0" expanded="true" />
-                <element signature="e#3606#3607#0" expanded="true" />
-                <element signature="e#5519#5520#0" expanded="true" />
-                <element signature="e#5543#5544#0" expanded="true" />
-                <element signature="e#5663#5664#0" expanded="true" />
-                <element signature="e#5691#5692#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="239">
+              <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -209,7 +136,7 @@
         <entry file="file://$PROJECT_DIR$/src/tcg/AbstractTrainerCard.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -217,8 +144,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tcg/fire/AbstractFirePokemon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="20" column="39" lean-forward="true" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+            <state relative-caret-position="255">
+              <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -229,7 +156,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tcg/psychic/AbstractPsychicPokemon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="238">
               <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -241,7 +168,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tcg/Trainer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="1904">
               <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
               <folding>
                 <element signature="e#3256#3257#0" expanded="true" />
@@ -254,8 +181,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tcg/fighting/PhaseOneFightingPokemon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="306">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -266,7 +193,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tcg/grass/PhaseOneGrassPokemon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="289">
               <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -280,8 +207,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -337,11 +264,11 @@
         <option value="$PROJECT_DIR$/src/tcg/water/PhaseTwoWaterPokemon.java" />
         <option value="$PROJECT_DIR$/src/tcg/IPokemon.java" />
         <option value="$PROJECT_DIR$/src/tcg/Iability.java" />
-        <option value="$PROJECT_DIR$/src/tcg/IAbility.java" />
         <option value="$PROJECT_DIR$/src/tcg/AbstractTrainerCard.java" />
         <option value="$PROJECT_DIR$/src/tcg/fighting/PhaseOneFightingPokemon.java" />
         <option value="$PROJECT_DIR$/src/tcg/grass/PhaseOneGrassPokemon.java" />
         <option value="$PROJECT_DIR$/src/tcg/AbstractPokemon.java" />
+        <option value="$PROJECT_DIR$/src/tcg/IAbility.java" />
       </list>
     </option>
   </component>
@@ -401,9 +328,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -429,12 +356,123 @@
       <recent name="pokemon" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="tcg" />
       <recent name="tcg.water" />
       <recent name="tcg.psychic" />
       <recent name="tcg.grass" />
       <recent name="tcg.fighting" />
-      <recent name="tcg" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/tcg/IAttack.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/tcg/Iability.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -592,6 +630,7 @@
       <workItem from="1559861676495" duration="3056000" />
       <workItem from="1560012665702" duration="633000" />
       <workItem from="1560191484824" duration="11598000" />
+      <workItem from="1560205130644" duration="339000" />
     </task>
     <task id="LOCAL-00001" summary="im trying OTL">
       <created>1559829540759</created>
@@ -607,7 +646,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559861458014</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added pokemon phases">
+      <created>1560205267625</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1560205267625</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -643,13 +689,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103058000" />
+    <option name="totallyTimeSpent" value="103397000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20726173" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21028744" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -694,13 +740,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="added pokemon phases" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/tcg/fire/FirePokemon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="73" selection-start-line="22" selection-start-column="73" selection-end-line="22" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tcg/fire/FirePokemon.java" />
     <entry file="file://$PROJECT_DIR$/src/tcg/IBasicPokemon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -715,17 +755,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tcg/PhaseOneWaterPokemon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#233#234#0" expanded="true" />
-            <element signature="e#257#258#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tcg/PhaseOneWaterPokemon.java" />
     <entry file="file://$PROJECT_DIR$/src/tcg/fire/IFirePokemon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -782,25 +812,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-          <folding>
-            <element signature="e#510#511#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tcg/AbstractPhaseOnePokemon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="27" lean-forward="true" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-          <folding>
-            <element signature="e#684#685#0" expanded="true" />
-            <element signature="e#704#705#0" expanded="true" />
-            <element signature="e#206#207#0" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tcg/AbstractPhaseOnePokemon.java" />
     <entry file="file://$PROJECT_DIR$/src/tcg/grass/IGrassPokemon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -808,13 +823,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tcg/grass/GrassPokemon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tcg/grass/GrassPokemon.java" />
     <entry file="file://$PROJECT_DIR$/src/tcg/IPhaseOnePokemon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -987,13 +996,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tcg/water/WaterPokemon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="27" selection-start-line="27" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tcg/water/WaterPokemon.java" />
     <entry file="file://$PROJECT_DIR$/src/tcg/water/AbstractWaterPokemon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1038,23 +1041,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tcg/IAbility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tcg/IAbility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tcg/electric/ElectricAttack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="136">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1072,14 +1061,14 @@
     <entry file="file://$PROJECT_DIR$/src/tcg/AbstractTrainerCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tcg/fire/AbstractFirePokemon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="20" column="39" lean-forward="true" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+        <state relative-caret-position="255">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1088,7 +1077,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tcg/psychic/AbstractPsychicPokemon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="238">
           <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1098,7 +1087,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tcg/Trainer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="1904">
           <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
           <folding>
             <element signature="e#3256#3257#0" expanded="true" />
@@ -1109,8 +1098,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tcg/fighting/PhaseOneFightingPokemon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="306">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1119,7 +1108,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tcg/grass/PhaseOneGrassPokemon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="289">
           <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1129,18 +1118,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tcg/AbstractPokemon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="167" column="23" selection-start-line="167" selection-start-column="23" selection-end-line="167" selection-end-column="23" />
-          <folding>
-            <element signature="e#3484#3485#0" expanded="true" />
-            <element signature="e#3514#3515#0" expanded="true" />
-            <element signature="e#3569#3570#0" expanded="true" />
-            <element signature="e#3606#3607#0" expanded="true" />
-            <element signature="e#5519#5520#0" expanded="true" />
-            <element signature="e#5543#5544#0" expanded="true" />
-            <element signature="e#5663#5664#0" expanded="true" />
-            <element signature="e#5691#5692#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="86">
+          <caret line="165" column="30" selection-start-line="165" selection-start-column="30" selection-end-line="165" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tcg/Iability.java~Stashed changes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="39" column="18" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="39" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tcg/IAbility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
         </state>
       </provider>
     </entry>

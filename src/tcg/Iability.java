@@ -1,5 +1,4 @@
 package tcg;
-
 /**
  * Common interface for all the attacks. Every attack have a name,
  * base damage, descriptive text and a cost
