@@ -1,13 +1,13 @@
 package tcg.water;
 
-import tcg.AbstractAttack;
+import tcg.AbstractAbility;
 import tcg.IPokemon;
 
 /**
  * Class that represents a Water Attack.
  * @author Catalina Rojas.
  */
-public class WaterAttack extends AbstractAttack {
+public class WaterAttack extends AbstractAbility {
     /**
      * Creates a new attack.
      *

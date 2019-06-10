@@ -1,13 +1,13 @@
 package tcg.grass;
 
-import tcg.AbstractAttack;
+import tcg.AbstractAbility;
 import tcg.IPokemon;
 
 /**
  * Class that represents a GrassAttack.
  * @author Catalina Rojas.
  */
-public class GrassAttack extends AbstractAttack {
+public class GrassAttack extends AbstractAbility {
     /**
      * Creates a new attack.
      *

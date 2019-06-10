@@ -5,6 +5,11 @@ package tcg;
  * When played, this card alters the game stats.
  * @author Catalina Rojas
  */
-public class AbstractTrainerCard {
+public abstract class AbstractTrainerCard implements ICard {
 
+
+    @Override
+    public void isPlayed(Trainer trainer) {
+
+    }
 }

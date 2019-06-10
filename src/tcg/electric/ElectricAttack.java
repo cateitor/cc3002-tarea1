@@ -1,13 +1,13 @@
 package tcg.electric;
 
-import tcg.AbstractAttack;
+import tcg.AbstractAbility;
 import tcg.IPokemon;
 
 /**
  * Class that represents an ElectricAttack
  * @author Catalina Rojas
  */
-public class ElectricAttack extends AbstractAttack {
+public class ElectricAttack extends AbstractAbility {
     /**
      * Creates a new attack.
      *

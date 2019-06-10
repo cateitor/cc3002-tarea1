@@ -6,7 +6,7 @@ package tcg;
  *
  * @author Catalina Rojas
  */
-public abstract class AbstractAttack implements IAttack {
+public abstract class AbstractAbility implements IAbility {
     private int baseDamage;
     private String name;
     private int cost;
@@ -19,7 +19,7 @@ public abstract class AbstractAttack implements IAttack {
      * @param aCost the energy cost of the attack.
      * @param aDescriptiveText the descriptive text of the attack.
      */
-    protected AbstractAttack(String aName, int aBaseDamage, int aCost, String aDescriptiveText){
+    protected AbstractAbility(String aName, int aBaseDamage, int aCost, String aDescriptiveText){
         baseDamage = aBaseDamage;
         name = aName;
         cost = aCost;
@@ -54,9 +54,9 @@ public abstract class AbstractAttack implements IAttack {
      */
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof IAttack && ((IAttack) obj).getBaseDamage() == baseDamage
-                && ((IAttack) obj).getName().equals(name) && ((IAttack) obj).getCost() ==cost
-                && ((IAttack) obj).getDescriptiveText() == descriptiveText;
+        return obj instanceof IAbility && ((IAbility) obj).getBaseDamage() == baseDamage
+                && ((IAbility) obj).getName().equals(name) && ((IAbility) obj).getCost() ==cost
+                && ((IAbility) obj).getDescriptiveText() == descriptiveText;
     }
 
 

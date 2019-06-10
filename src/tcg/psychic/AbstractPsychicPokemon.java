@@ -7,19 +7,16 @@ import tcg.fighting.FightingAttack;
 
 import java.util.ArrayList;
 
-/**
- * Class taht represent a Psychic Pokemon.
- */
-public class PsychicPokemon extends AbstractPokemon {
-
+public abstract class AbstractPsychicPokemon extends AbstractPokemon implements IPsychicPokemon {
     /**
-     * Creates a new Fire Pokemon.
-     * @param aId the id of the pokemon.
-     * @param anHp hp of the pokemon.
-     * @param anEnergies energies associated to the pokeomon.
-     * @param anAttacks attacks associated to the pokemon, maximum of 4.
+     * Creates a new Pokemon
+     *
+     * @param aId        the id of the pokemon.
+     * @param anHp       health points of the pokemon.
+     * @param anEnergies energies associated with the pokemon.
+     * @param anAttacks  the types of attacks of the pokemon. Maximum of 4.
      */
-    public PsychicPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAbility> anAttacks) {
+    public AbstractPsychicPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAbility> anAttacks) {
         super(aId, anHp, anEnergies, anAttacks);
     }
 

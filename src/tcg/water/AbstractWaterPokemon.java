@@ -2,26 +2,23 @@ package tcg.water;
 
 import tcg.AbstractPokemon;
 import tcg.EnergyCounter;
+import tcg.IAbility;
 import tcg.electric.ElectricAttack;
-import tcg.IAttack;
 import tcg.fighting.FightingAttack;
 import tcg.grass.GrassAttack;
 
 import java.util.ArrayList;
 
-/**
- * Class that represents a Water Pokemon.
- */
-public class WaterPokemon extends AbstractPokemon {
-
+public abstract class AbstractWaterPokemon extends AbstractPokemon implements IWaterPokemon {
     /**
-     * Creates a new Fire Pokemon.
-     * @param aId the id of the pokemon.
-     * @param anHp hp of the pokemon.
-     * @param anEnergies energies associated to the pokeomon.
-     * @param anAttacks attacks associated to the pokemon, maximum of 4.
+     * Creates a new Pokemon
+     *
+     * @param aId        the id of the pokemon.
+     * @param anHp       health points of the pokemon.
+     * @param anEnergies energies associated with the pokemon.
+     * @param anAttacks  the types of attacks of the pokemon. Maximum of 4.
      */
-    public WaterPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAttack> anAttacks) {
+    public AbstractWaterPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAbility> anAttacks) {
         super(aId, anHp, anEnergies, anAttacks);
     }
 

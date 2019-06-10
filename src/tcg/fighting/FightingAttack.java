@@ -1,13 +1,13 @@
 package tcg.fighting;
 
-import tcg.AbstractAttack;
+import tcg.AbstractAbility;
 import tcg.IPokemon;
 
 /**
  * Class that represent an Fighting attack
  * @author Catalina Rojas
  */
-public class FightingAttack extends AbstractAttack {
+public class FightingAttack extends AbstractAbility {
     /**
      * Creates a new attack.
      *

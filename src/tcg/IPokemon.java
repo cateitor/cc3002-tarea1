@@ -103,13 +103,13 @@ public interface IPokemon extends ICard{
      * Return the attacks of the pokemon
      * @return attacks
      */
-    ArrayList<IAttack> getAttacks();
+    ArrayList<IAbility> getAttacks();
 
     /**
      * Returns the selected attacks of the pokemon.
      * @return selectedAttack
      */
-    IAttack getSelectedAttack();
+    IAbility getSelectedAttack();
 
 
     //I THINK I DONT NEED THIS
@@ -123,7 +123,7 @@ public interface IPokemon extends ICard{
      * Adds an attack to the pokemon
      * @param attack the attacks to be added.
      */
-    void addAttack(IAttack attack);
+    void addAttack(IAbility attack);
 
 
     /**

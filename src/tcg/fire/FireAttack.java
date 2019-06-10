@@ -1,9 +1,9 @@
 package tcg.fire;
 
-import tcg.AbstractAttack;
+import tcg.AbstractAbility;
 import tcg.IPokemon;
 
-public class FireAttack extends AbstractAttack {
+public class FireAttack extends AbstractAbility {
 
 
     /**

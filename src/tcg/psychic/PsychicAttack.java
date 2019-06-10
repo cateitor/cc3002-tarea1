@@ -1,13 +1,13 @@
 package tcg.psychic;
 
-import tcg.AbstractAttack;
+import tcg.AbstractAbility;
 import tcg.IPokemon;
 
 /**
  * Class that represents a Psychic Attack.
  * @author Catalina Rojas.
  */
-public class PsychicAttack extends AbstractAttack {
+public class PsychicAttack extends AbstractAbility {
     /**
      * Creates a new attack.
      *

@@ -25,8 +25,9 @@ public abstract class AbstractPokemon implements IPokemon{
     private int hp;
     private int damage;
     private EnergyCounter energyCounter;
-    private ArrayList<IAttack> attacks;
-    private IAttack selectedAttack=null;
+    private ArrayList<IAbility> attacks;
+    private IAbility selectedAttack=null;
+    private int preId;
 
     /**
      * Creates a new Pokemon
@@ -35,7 +36,7 @@ public abstract class AbstractPokemon implements IPokemon{
      * @param anEnergies energies associated with the pokemon.
      * @param anAttacks the types of attacks of the pokemon. Maximum of 4.
      */
-    public AbstractPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAttack> anAttacks){
+    public AbstractPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAbility> anAttacks){
         id=aId;
         hp=anHp;
         energyCounter=anEnergies;
@@ -65,7 +66,7 @@ public abstract class AbstractPokemon implements IPokemon{
      * Receives attack from a card.
      * @param attack the attack.
      */
-    private void receiveAttack(IAttack attack) {
+    private void receiveAttack(IAbility attack) {
         damage+=attack.getBaseDamage();
         if(hp<damage){
             damage=hp;
@@ -98,11 +99,11 @@ public abstract class AbstractPokemon implements IPokemon{
         receiveAttack(waterAttack);
     }
 
-    public void receiveResistantAttack(IAttack attack){
+    public void receiveResistantAttack(IAbility attack){
         this.hp-= (attack.getBaseDamage() -30);
     }
 
-    public void receiveWeaknessAttack(IAttack attack){
+    public void receiveWeaknessAttack(IAbility attack){
         this.hp -= (attack.getBaseDamage()*2);
     }
 
@@ -137,12 +138,12 @@ public abstract class AbstractPokemon implements IPokemon{
     }
 
     @Override
-    public ArrayList<IAttack> getAttacks(){
+    public ArrayList<IAbility> getAttacks(){
         return attacks;
     }
 
     @Override
-    public IAttack getSelectedAttack(){
+    public IAbility getSelectedAttack(){
         return selectedAttack;
     }
 
@@ -162,7 +163,7 @@ public abstract class AbstractPokemon implements IPokemon{
     }
 
     @Override
-    public void addAttack(IAttack attack){
+    public void addAttack(IAbility attack){
         if(attacks.size()<4){
             attacks.add(attack);
         }
@@ -215,4 +216,19 @@ public abstract class AbstractPokemon implements IPokemon{
         energyCounter.setWaterEnergy(energyCounter.getWaterEnergy()+1);
     }
 
+    /**
+     * Sets the Pokemon's pre evolution id.
+     * @param id the id corresponding to the basic pokemon that is the pre evolution
+     */
+    void setBasicPokemonId(int id){
+        preId=id;
+    }
+
+    /**
+     * Ges the Pokemon's pre evolution id
+     * @return pre evolution id
+     */
+    int getBasicPokemonId(){
+        return preId;
+    }
 }

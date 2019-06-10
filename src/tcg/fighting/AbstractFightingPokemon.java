@@ -8,20 +8,16 @@ import tcg.psychic.PsychicAttack;
 
 import java.util.ArrayList;
 
-/**
- * Class that represents a FightingPokemon.
- * @author Catalina Rojas
- */
-public class FightingPokemon extends AbstractPokemon {
-
+public abstract class AbstractFightingPokemon extends AbstractPokemon implements IFightingPokemon {
     /**
-     * Creates a new Fighting Pokemon.
-     * @param aId id of the pokemon.
-     * @param anHp hp of the pokemon.
-     * @param anEnergies energies associates to the pokemon.
-     * @param anAttacks attacks of the pokemon, maximum of 4.
+     * Creates a new Pokemon
+     *
+     * @param aId        the id of the pokemon.
+     * @param anHp       health points of the pokemon.
+     * @param anEnergies energies associated with the pokemon.
+     * @param anAttacks  the types of attacks of the pokemon. Maximum of 4.
      */
-    public FightingPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAbility> anAttacks) {
+    public AbstractFightingPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAbility> anAttacks) {
         super(aId, anHp, anEnergies, anAttacks);
     }
 

@@ -1,7 +1,7 @@
 package tcg;
 
-import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Stack;
 
 /**
  * Class that represents a Trainer.
@@ -13,7 +13,7 @@ public class Trainer {
     private ArrayList<ICard> hand;
     private ArrayList<IPokemon> bench;
     private ArrayList<ICard> deck;
-    private ArrayList<ICard> discardPile;
+    private Stack<ICard> discardPile;
 
     /**
      * Creates a new Trainer
@@ -22,7 +22,7 @@ public class Trainer {
         activePokemon = null;
         hand = new ArrayList<ICard>();
         bench= new ArrayList<IPokemon>();
-        discardPile= new ArrayList<ICard>();
+        discardPile= new Stack<ICard>();
         deck = new ArrayList<ICard>();
     }
 
@@ -133,7 +133,7 @@ public class Trainer {
      * Gets the current selected attack for the active pokemon.
      * @return the selected attack.
      */
-    public IAttack getSelectedAttack() {
+    public IAbility getSelectedAttack() {
         return activePokemon.getSelectedAttack();
     }
 
@@ -149,7 +149,7 @@ public class Trainer {
      * Gets the discard pile of the trainer.
      * @return discardPile.
      */
-    public ArrayList<ICard> getDiscardPile(){
+    public Stack<ICard> getDiscardPile(){
         return discardPile;
     }
 
