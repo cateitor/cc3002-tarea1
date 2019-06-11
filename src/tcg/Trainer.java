@@ -1,5 +1,7 @@
 package tcg;
 
+import controller.Visitor;
+
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -155,6 +157,7 @@ public class Trainer {
 
     public void drawCard(){
         hand.add(deck.get(0));
+        deck.remove(deck.get(0));
     }
 
 
@@ -171,6 +174,10 @@ public class Trainer {
 
     public void useAbility(Trainer adversary){
         activePokemon.useAbility(adversary);
+    }
+
+    public void accept(Visitor v){
+        v.visitTrainer(this);
     }
 
 
