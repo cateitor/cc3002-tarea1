@@ -3,9 +3,14 @@ package tcg.grass;
 import tcg.EnergyCounter;
 import tcg.IAbility;
 import tcg.IPhaseOnePokemon;
+import visitor.Visitor;
 
 import java.util.ArrayList;
 
+/**
+ * Class for a PhaseOneGrassPokemon
+ * @author Catalina Rojas
+ */
 public class PhaseOneGrassPokemon extends AbstractGrassPokemon implements IPhaseOnePokemon {
     private  int preId;
     /**
@@ -18,6 +23,11 @@ public class PhaseOneGrassPokemon extends AbstractGrassPokemon implements IPhase
      */
     public PhaseOneGrassPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAbility> anAttacks) {
         super(aId, anHp, anEnergies, anAttacks);
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitPhasePokemon(this);
     }
 
 }

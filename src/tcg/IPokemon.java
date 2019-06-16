@@ -1,5 +1,7 @@
 package tcg;
 
+import tcg.trainer.Trainer;
+import visitor.Visitor;
 import tcg.electric.ElectricAttack;
 import tcg.electric.ElectricEnergy;
 import tcg.fighting.FightingAttack;
@@ -93,6 +95,9 @@ public interface IPokemon extends ICard{
 
     int getDamage();
 
+    void setEnergyCounter(EnergyCounter energies);
+
+    Trainer getTrainer();
     /**
      * Return the energies that are associated to the pokemon.
      * @return energyCounter
@@ -111,14 +116,6 @@ public interface IPokemon extends ICard{
      */
     IAbility getSelectedAttack();
 
-
-    //I THINK I DONT NEED THIS
-    /**
-     * Return the total number of energies
-     * @return numberOfEnergies
-     */
-    int numberOfEnergies();
-
     /**
      * Adds an attack to the pokemon
      * @param attack the attacks to be added.
@@ -133,15 +130,57 @@ public interface IPokemon extends ICard{
     void useAbility(Trainer adversary);
 
 
+    /**
+     * Adds an ElectricEnergy.
+     * @param electricEnergy the energy added.
+     */
     void addElectricEnergy(ElectricEnergy electricEnergy);
 
+    /**
+     * Adds a FightingEnergy.
+     * @param energy the energy added.
+     */
     void addFightingEnergy(FightingEnergy energy);
 
+    /**
+     * Adds a FireEnergy
+     * @param energy the energy added.
+     */
     void addFireEnergy(FireEnergy energy);
 
+    /**
+     * Adds a GrassEnergy
+     * @param energy the energy added
+     */
     void addGrassEnergy(GrassEnergy energy);
 
+    /**
+     * Adds a PsychicEnergy
+     * @param energy the energy added
+     */
     void addPsychicEnergy(PsychicEnergy energy);
 
+    /**
+     * Adds a WaterEnergy
+     * @param energy the energy added
+     */
     void addWaterEnergy(WaterEnergy energy);
+
+    /**
+     * Accepts a visitor
+     * @param v the visitor accepted
+     */
+    void accept(Visitor v);
+
+    /**
+     * Gets the preId of the pokemon
+     * @return preId
+     */
+    int getPreId();
+
+    /**
+     * Sets the preId of a Pokemon
+     * @param id the preId
+     */
+    void setPreId(int id);
 }

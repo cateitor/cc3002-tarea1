@@ -1,11 +1,12 @@
 package tcg.fighting;
 
 import tcg.*;
+import visitor.Visitor;
 
 /**
  * Class that represents a FightingEnergy.
  */
-public class FightingEnergy implements IEnergy {
+public class FightingEnergy extends AbstractEnergyCard implements IEnergy {
 
     @Override
     public boolean equals(Object obj) {
@@ -18,7 +19,7 @@ public class FightingEnergy implements IEnergy {
     }
 
     @Override
-    public void isPlayed(Trainer trainer) {
-        trainer.getActivePokemon().addFightingEnergy(this);
+    public void accept(Visitor visitor) {
+        visitor.visitFightingEnergy(this);
     }
 }

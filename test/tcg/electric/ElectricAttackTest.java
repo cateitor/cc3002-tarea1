@@ -2,41 +2,43 @@ package tcg.electric;
 
 import org.junit.Before;
 import org.junit.Test;
-import tcg.fire.FirePokemon;
-import tcg.IAttack;
-import tcg.IEnergy;
+import tcg.EnergyCounter;
+import tcg.IAbility;
 import tcg.IPokemon;
-import tcg.fighting.FightingPokemon;
-import tcg.grass.GrassPokemon;
-import tcg.psychic.PsychicPokemon;
-import tcg.water.WaterPokemon;
+import tcg.fighting.BasicFightingPokemon;
+import tcg.fire.BasicFirePokemon;
+import tcg.grass.BasicGrassPokemon;
+import tcg.psychic.BasicPsychicPokemon;
+import tcg.water.BasicWaterPokemon;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ElectricAttackTest {
-    private IAttack electricAttack;
+    private IAbility electricAttack;
     private IPokemon charmander, bulbasaur, squirtle,pikachu,abra,machop;
 
     @Before
     public void setUp(){
         electricAttack = new ElectricAttack("Thunder", 30, 2, "The pokemon is paralyzed!");
-        charmander = new FirePokemon(4,70, new ArrayList<IEnergy>(), new ArrayList<IAttack>());
-        bulbasaur = new GrassPokemon(1, 70, new ArrayList<IEnergy>(), new ArrayList<IAttack>());
-        squirtle = new WaterPokemon(7, 70, new ArrayList<IEnergy>(), new ArrayList<IAttack>());
-        pikachu = new ElectricPokemon(25,70,new ArrayList<IEnergy>(),new ArrayList<IAttack>());
-        abra = new PsychicPokemon(63,70,new ArrayList<IEnergy>(),new ArrayList<IAttack>());
-        machop = new FightingPokemon(66,70,new ArrayList<IEnergy>(),new ArrayList<IAttack>());
+        charmander = new BasicFirePokemon(4,70, new EnergyCounter(), new ArrayList<IAbility>());
+        bulbasaur = new BasicGrassPokemon(1, 70, new EnergyCounter(), new ArrayList<IAbility>());
+        squirtle = new BasicWaterPokemon(7, 70, new EnergyCounter(), new ArrayList<IAbility>());
+        pikachu = new BasicElectricPokemon(25,70,new EnergyCounter(),new ArrayList<IAbility>());
+        abra = new BasicPsychicPokemon(63,70,new EnergyCounter(),new ArrayList<IAbility>());
+        machop = new BasicFightingPokemon(66,70,new EnergyCounter(),new ArrayList<IAbility>());
     }
 
     @Test
     public void constructorTest(){
+        EnergyCounter e = new EnergyCounter();
+        e.setElectricEnergy(2);
         assertEquals("Thunder", electricAttack.getName());
         assertEquals(30,electricAttack.getBaseDamage());
-        assertEquals(2, electricAttack.getCost());
+        assertEquals(e.getEnergies(),electricAttack.getCost().getEnergies());
         assertEquals("The pokemon is paralyzed!", electricAttack.getDescriptiveText());
     }
 
@@ -49,18 +51,12 @@ public class ElectricAttackTest {
         electricAttack.attack(abra);
         electricAttack.attack(machop);
 
-        assertEquals(40, charmander.getHp());
-        assertEquals(40, bulbasaur.getHp());
-        assertEquals(10, squirtle.getHp());
-        assertEquals(40,pikachu.getHp());
-        assertEquals(40,abra.getHp());
-        assertEquals(40,machop.getHp());
-    }
-
-    @Test
-    public void equalsTest(){
-        assertEquals(electricAttack, new ElectricAttack("Thunder", 30,2, "The pokemon is paralyzed!"));
-        assertNotEquals(electricAttack, new ElectricAttack("Thunder", 40,1, ""));
+        assertEquals(40, charmander.getCurrentHp());
+        assertEquals(40, bulbasaur.getCurrentHp());
+        assertEquals(10, squirtle.getCurrentHp());
+        assertEquals(40,pikachu.getCurrentHp());
+        assertEquals(40,abra.getCurrentHp());
+        assertEquals(40,machop.getCurrentHp());
     }
 
 

@@ -7,6 +7,10 @@ import tcg.water.WaterAttack;
 
 import java.util.ArrayList;
 
+/**
+ * Abstract Class for a FirePokemon
+ * @author Catalina Rojas
+ */
 public abstract class AbstractFirePokemon extends AbstractPokemon implements IFirePokemon {
 
     /**

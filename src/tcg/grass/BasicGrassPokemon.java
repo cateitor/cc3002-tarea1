@@ -3,9 +3,14 @@ package tcg.grass;
 import tcg.EnergyCounter;
 import tcg.IAbility;
 import tcg.IBasicPokemon;
+import visitor.Visitor;
 
 import java.util.ArrayList;
 
+/**
+ * Class that represents a BasicGrassPokemon
+ * @author Catalina Rojas
+ */
 public class BasicGrassPokemon extends AbstractGrassPokemon implements IBasicPokemon {
     /**
      * Creates a new Pokemon
@@ -19,4 +24,27 @@ public class BasicGrassPokemon extends AbstractGrassPokemon implements IBasicPok
         super(aId, anHp, anEnergies, anAttacks);
     }
 
+    @Override
+    public void accept(Visitor v) {
+        v.visitBasicPokemon(this);
+    }
+
+
+    /**
+     * A basic Pokemon does not have a pre evolution
+     * @param id is set to 0.
+     */
+    @Override
+    public void setPreId(int id){
+        this.setPreId(0);
+    }
+
+    /**
+     * A basic Pokemon does not have a pre evolution
+     * @return 0.
+     */
+    @Override
+    public int getPreId(){
+        return 0;
+    }
 }

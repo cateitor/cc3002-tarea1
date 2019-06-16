@@ -18,6 +18,7 @@ public class WaterAttack extends AbstractAbility {
      */
     public WaterAttack(String aName, int aBaseDamage, int aCost, String aDescriptiveText) {
         super(aName, aBaseDamage, aCost, aDescriptiveText);
+        this.getCost().setWaterEnergy(aCost);
     }
 
     @Override

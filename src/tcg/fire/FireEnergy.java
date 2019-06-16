@@ -1,14 +1,13 @@
 package tcg.fire;
 
-import tcg.IEnergy;
-import tcg.IPokemon;
-import tcg.Trainer;
+import tcg.*;
+import visitor.Visitor;
 
 /**
  * Class that represents a Fire Energy.
  * @author Catalina Rojas
  */
-public class FireEnergy implements IEnergy {
+public class FireEnergy extends AbstractEnergyCard implements IEnergy {
 
     @Override
     public boolean equals(Object obj) {
@@ -21,7 +20,7 @@ public class FireEnergy implements IEnergy {
     }
 
     @Override
-    public void isPlayed(Trainer trainer) {
-        trainer.getActivePokemon().addFireEnergy(this);
+    public void accept(Visitor visitor) {
+        visitor.visitFireEnergy(this);
     }
 }

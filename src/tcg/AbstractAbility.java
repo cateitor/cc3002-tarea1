@@ -9,7 +9,7 @@ package tcg;
 public abstract class AbstractAbility implements IAbility {
     private int baseDamage;
     private String name;
-    private int cost;
+    private EnergyCounter cost;
     private String descriptiveText;
 
     /**
@@ -22,7 +22,7 @@ public abstract class AbstractAbility implements IAbility {
     protected AbstractAbility(String aName, int aBaseDamage, int aCost, String aDescriptiveText){
         baseDamage = aBaseDamage;
         name = aName;
-        cost = aCost;
+        cost = new EnergyCounter();
         descriptiveText = aDescriptiveText;
     }
 
@@ -43,7 +43,7 @@ public abstract class AbstractAbility implements IAbility {
     }
 
     @Override
-    public int getCost() {
+    public EnergyCounter getCost() {
         return cost;
     }
 
@@ -55,7 +55,7 @@ public abstract class AbstractAbility implements IAbility {
     @Override
     public boolean equals(Object obj) {
         return obj instanceof IAbility && ((IAbility) obj).getBaseDamage() == baseDamage
-                && ((IAbility) obj).getName().equals(name) && ((IAbility) obj).getCost() ==cost
+                && ((IAbility) obj).getName().equals(name) && ((IAbility) obj).getCost().energies ==cost.energies
                 && ((IAbility) obj).getDescriptiveText() == descriptiveText;
     }
 

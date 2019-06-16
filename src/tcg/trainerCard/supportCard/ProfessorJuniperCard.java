@@ -1,17 +1,23 @@
 package tcg.trainerCard.supportCard;
 
-import tcg.ICard;
-import tcg.ITrainerCard;
-import tcg.Trainer;
+import tcg.*;
+import visitor.Visitor;
 
-public class ProfessorJuniperCard implements ITrainerCard {
+/**
+ * Class that Represents a Professor Juniper Card.
+ */
+public class ProfessorJuniperCard extends AbstractTrainerCard implements ITrainerCard {
+    String name;
+
+    /**
+     * Constructor for the ProfessorJuniperCard;
+     */
+    public ProfessorJuniperCard(){
+        name = "Professor Juniper Card";
+    }
+
     @Override
-    public void isPlayed(Trainer trainer) {
-        for(ICard card : trainer.getHand()){
-            trainer.getDiscardPile().add(card);
-        }
-        for(int i=0; i<7;i++){
-            trainer.drawCard();
-        }
+    public void accept(Visitor visitor) {
+        visitor.visitProfessorJuniperCard(this);
     }
 }

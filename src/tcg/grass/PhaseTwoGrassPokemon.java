@@ -3,9 +3,14 @@ package tcg.grass;
 import tcg.EnergyCounter;
 import tcg.IAbility;
 import tcg.IPhaseTwoPokemon;
+import visitor.Visitor;
 
 import java.util.ArrayList;
 
+/**
+ * Class for a PhaseTwoGrassPokemon
+ * @author Catalina Rojas
+ */
 public class PhaseTwoGrassPokemon extends AbstractGrassPokemon implements IPhaseTwoPokemon {
     /**
      * Creates a new Pokemon
@@ -18,4 +23,10 @@ public class PhaseTwoGrassPokemon extends AbstractGrassPokemon implements IPhase
     public PhaseTwoGrassPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAbility> anAttacks) {
         super(aId, anHp, anEnergies, anAttacks);
     }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitPhasePokemon(this);
+    }
+
 }

@@ -3,9 +3,14 @@ package tcg.fire;
 import tcg.EnergyCounter;
 import tcg.IAbility;
 import tcg.IPhaseOnePokemon;
+import visitor.Visitor;
 
 import java.util.ArrayList;
 
+/**
+ * Class that represents a PhaseOneFirePokemon
+ * @author Catalina Rojas
+ */
 public class PhaseOneFirePokemon extends AbstractFirePokemon implements IPhaseOnePokemon {
     private int preId;
     /**
@@ -18,6 +23,11 @@ public class PhaseOneFirePokemon extends AbstractFirePokemon implements IPhaseOn
      */
     public PhaseOneFirePokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAbility> anAttacks) {
         super(aId, anHp, anEnergies, anAttacks);
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitPhasePokemon(this);
     }
 
 }

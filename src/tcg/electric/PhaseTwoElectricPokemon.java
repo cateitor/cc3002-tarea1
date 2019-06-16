@@ -3,9 +3,14 @@ package tcg.electric;
 import tcg.EnergyCounter;
 import tcg.IAbility;
 import tcg.IPhaseTwoPokemon;
+import visitor.Visitor;
 
 import java.util.ArrayList;
 
+/**
+ * Class that represents a PhaseTwoElectricPokemon
+ * @author Catalina Rojas
+ */
 public class PhaseTwoElectricPokemon extends AbstractElectricPokemon implements IPhaseTwoPokemon {
     /**
      * Creates a new Pokemon
@@ -19,5 +24,10 @@ public class PhaseTwoElectricPokemon extends AbstractElectricPokemon implements 
         super(aId, anHp, anEnergies, anAttacks);
     }
 
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitPhasePokemon(this);
+    }
 
 }

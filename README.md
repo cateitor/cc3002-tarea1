@@ -1,9 +1,6 @@
-# CC3002 - Tarea 1 : Pokemon TCG: Elementos basicos
+# CC3002 - Tarea 2 : Pokemon TCG: Electric Bungaloo
 
-En esta tarea se implementan los elementos básicos para el juego de cartas Pokemon. Existen las cartas de tipo energía y las de tipo Pokemon. Las cartas energías se usan para añadirlas al Pokemon activo de un entrenador. 
-Tanto los Pokemon como las energias pueden ser de 6 tipos distintos: agua, rayo, planta, psíquico, lucha o fuego. 
-Cada Pokemon tiene debilidades y resistencias dependiendo de su tipo. 
-El entrenador cuenta con una mano con cartas ilimitadas, un Pokemon activo y una banca con un máximo de 5 Pokemon. 
+Siguiendo la implementación de la tarea 1, en la tarea 2 se añaden nuevos tipos de cartas, pokemon evolucionados y un controlador para el juego.  
 
 ### Prerequisitos
 
@@ -11,26 +8,67 @@ El proyecto fue realizado en IntelliJ, por lo que se necesitará para iniciarlo 
 
 ### Implementación
 
-Se una interfaz para las cartas (Icard) que es extendida en las interfaces correspondientes a los **Pokemon** *(IPokemon)* y **Energías** *(IEnergy)*. Esto debido a que luego en la banca del entrenador se aceptan solo Pokemon, mientras que los Pokemon tienen energias asociadas. Por esto hay que hacer una diferencia. 
-Se crea una clase abstracta para los Pokemon (**AbstractPokemon**) que implementa **IPokemon** y será extendida por los seis tipos de Pokemon. 
-El constructor de AbstractPokemon es de la forma: **_AbstractPokemon(int aId, int anHp, ArrayList<IEnergy> anEnergies, ArrayList<IAttack> anAttacks)_** donde se ve que cada Pokemon posee un ID, HP, una lista de energías y una lista de ataques que puede ser de un máximo de 4. 
-También cuenta con getters y setter para sus variables, un método para atacar a otro Pokemon y otros para cuando recibe ataques. Dependiendo del tipo de ataque recibido será el daño que reciba, ya que como se mencionó antes los Pokemon tienen resistencias y debilidades. Pero esa diferencia se hace en las clases que implementan la clase abstracta. Entre otros. 
+A grandes rasgos la mayoría de los nuevos métodos implementados fueron hechos con una clase visitor que, dependiendo de lo que visitaba, deriva lo que se va a hacer en cada caso. 
+Tenemos tres tipos de visitor: 
+	* EnergyVisitor: visita los distintos tipos de energía
+	* PokemonVisitor: visita los distintos tipos de pokemon
+	* TrainerCardVisitor: visita las distintas cartas de entrenador. 
 
-La otra interfaz que se tiene es para los ataques, ya que estos tambien pueden ser de seis tipos distintos. Al igual que Pokemon, se creó un **AbstractAttack** que luego fue extendido por las clases de los distintos tipos de ataques. Tiene un constructor de la forma **_AbstractAttack(String aName, int aBaseDamage, int aCost, String aDescriptiveText)_** donde las variables corresponden al nombre del ataque, el daño base que causa, el costo asociado (cantidad de cartas de energía necesarias para realizar el ataque) y una breve descripción del ataque. Existen getters para cada una de estas variables. 
+* Cada una de estas clases hace Overrides de algunos métodos de la clase abstracta Visitor.  
+* Cada tipo de carta tiene un método play en su clase abstracta quien es el encargado de aceptar el visitor según el tipo de carta. 
 
-Finalmente se crea la clase **Trainer** que será el entrenador Pokemon, su constructor es **_Trainer()_** en donde sus variables se setean como _activePokemon = null_ (ya que al principio del juego no hay pokemon activo), _hand = new ArrayList<ICard> ()_ (en donde se irán agregando las cartas a la mano) y _bench = new ArrayList<IPokemon>()_ (en donde se irán agregando Pokemon jugados desde la mano del entrenador).
+**Entrenador**
+	* Tiene un mazo de cartas, una pila de descarte y hasta seis cartas premio, las cuales también son sacadas desde el mazo.
+	* Sabe cual es el controlador que se hace cargo de el. 
 
-El patrón de diseño ocupado fue Double Dispatch para el momento en que el entrenador elige una carta para jugar desde su mano, donde hay que ver el tipo de carta (energía o pokemon) y según eso relizar una acción. También se usa para diferenciar entre los tipos de las cartas y los ataques. 
+**Energías**
+	* Ahora también pueden agregarse a un pokemon de la banca, por lo que se crea un método para seleccionar el pokemon al que se le agregará la energía antes de jugarla *(setSelectedPokemon)* además puede jugarse una por turno. De esto último estará encargado el controlador del juego que irá viendo los distintos estados según las acciones que se realicen. 
+
+**Evoluciones**
+
+	*Los Pokemon ahora pueden ser Básicos, Fase1 o Fase2. Por esto se crean interfaces para uno y luego clases abstractas según tipo (agua, fuego, etc). El método accept de cada pokemon hace un visit diferente según el tipo. 
+	* Se sabe que un pokemon es preevolución de otra porque está estipulado su id en la evolución. Si quiere jugarse una carta fase1 o fase2, el pokemon seleccionado debe ser preevolución de esta.
+
+**Controlador**
+	
+	* El controlador maneja la lógica de una partida, se asume que se está en medio de un turno. Tienen conocimiento de los entrenadores y de quien es el entrenador actual. 
+	* Se hizo un clase **State** (utilizando el State Pattern) que maneja los estados de un turno, tales como si se ha robado una carta, ver que no se juegue más de una energía, ver si se ha ocupado una habilidad o si se ha atacado al pokemon del oponente que hace que termine el turno, etc. 
+	* Las acciones que tienen que poder realizarse en un turno son: 
+		1. robar carta: se utiliza *drawCard()* en donde se cambia el estado del juego y se permite que se realicen otras acciones en el turno 
+		2. Ver las cartas de su mano: se ocupa *lookAtHand()* y devuelve todas las cartas del entrenador actual. 
+		3. jugar una carta de su mano: se utiliza el método *play(int index)* con *index* el índice de la carta de su mano que quiere jugarse. Aquí entra en juego el visitor, porque según el tipo de carta es el visitor que se ocupará y la acción que se realizará. 
+		3. utilizar alguna habilidad de su pokemon activo: primero hay que usar *selectAbility(int index)* que elige la habilidad a ocupar del pokemon activo y luego *useAbility()* utiliza dicha habilidad y cambia el estado del juego si es que corresponde. 
+		4. terminar turno o atacar: se puede usar *endTurn()* para terminar el turno o sino atacar al pokemon del oponente que hará que se acabe en turno de todas formas. 
+
+
+**Habilidades**
+	* Ahora se tienen habilidades y ataques, los ataques son un tipo particular de habilidad y son lo último que puede hacer un jugador antes que se acabe su turno. 
+
+	* Se implementó la habilidad Heal, la cual cura a un pokemon 10 HP si es que sale cara al tirar una moneda. Como puede usarse una vez por turno, el controlador tiene que tener un cambio de estado que avise que ya se ha jugado una habilidad. 
+	* Se implementó el ataque ElectricShock, el cual se asumió es un tipo de ataque eléctrico. En este se tira una moneda y si sale sello el pokemon del oponente recibe x de daño. 
+
+**Objetos**
+
+	* Se implementó el objeto Potion, el cual remueve x de daño de un pokemon. 
+
+**Estadios**
+
+	*
+
+**Soporte**
+	*
+
 ## Iniciando los test
 
-Todos los test del proyecto se encuentran en la carpeta test. Se encuentran separados por tipo del objeto (fire, water, etc) y existe una carpeta solo para el test que corresponde al Trainer. Seleccionando la carpeta test para hacer el run hará que corran todos los test del proyecto. Se intenta testear la gran mayoría de los métodos de cada clase. 
+Todos los test del proyecto se encuentran en la carpeta test. Se encuentran separados por Pokemon, Ataque, Energía, Entrenador y Controlador. Seleccionando la carpeta test para hacer el run hará que corran todos los test del proyecto. Se intenta testear la gran mayoría de los métodos de cada clase para alcanzar el 90% de coverage. 
 
 ## Autor
 
 * **Catalina Rojas**
 
+
 ## Acknowledgments
 
 Algunas de las funcionalidades fueron basadas en el auxiliar 3 del curso. 
 
-# cc3002-tarea1
+# cc3002-tarea2

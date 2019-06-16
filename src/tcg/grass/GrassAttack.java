@@ -18,6 +18,7 @@ public class GrassAttack extends AbstractAbility {
      */
     public GrassAttack(String aName, int aBaseDamage, int aCost, String aDescriptiveText) {
         super(aName, aBaseDamage, aCost, aDescriptiveText);
+        this.getCost().setGrassEnergy(aCost);
     }
 
     @Override

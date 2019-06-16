@@ -3,6 +3,10 @@ package tcg.fire;
 import tcg.AbstractAbility;
 import tcg.IPokemon;
 
+/**
+ * Class for a FireAttack
+ * @author Catalina Rojas
+ */
 public class FireAttack extends AbstractAbility {
 
 
@@ -16,6 +20,7 @@ public class FireAttack extends AbstractAbility {
      */
     public FireAttack(String aName, int aBaseDamage, int aCost, String aDescriptiveText) {
         super(aName, aBaseDamage, aCost, aDescriptiveText);
+        this.getCost().setFireEnergy(aCost);
     }
 
 

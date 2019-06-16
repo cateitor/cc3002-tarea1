@@ -1,14 +1,13 @@
 package tcg.grass;
 
-import tcg.IEnergy;
-import tcg.IPokemon;
-import tcg.Trainer;
+import tcg.*;
+import visitor.Visitor;
 
 /**
  * Class that represents a GrassEnergy.
  * @author Catalina Rojas.
  */
-public class GrassEnergy implements IEnergy{
+public class GrassEnergy extends AbstractEnergyCard implements IEnergy{
 
 
 
@@ -22,8 +21,9 @@ public class GrassEnergy implements IEnergy{
         pokemon.addGrassEnergy(this);
     }
 
+
     @Override
-    public void isPlayed(Trainer trainer) {
-        trainer.getActivePokemon().addGrassEnergy(this);
+    public void accept(Visitor visitor) {
+        visitor.visitGrassEnergy(this);
     }
 }

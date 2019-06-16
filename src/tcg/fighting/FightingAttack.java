@@ -18,6 +18,7 @@ public class FightingAttack extends AbstractAbility {
      */
     public FightingAttack(String aName, int aBaseDamage, int aCost, String aDescriptiveText) {
         super(aName, aBaseDamage, aCost, aDescriptiveText);
+        this.getCost().setFightingEnergy(aCost);
     }
 
     @Override

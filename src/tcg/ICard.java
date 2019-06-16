@@ -1,14 +1,27 @@
 package tcg;
 
+import tcg.trainer.Trainer;
+import visitor.Visitable;
+
 /**
  * Common interface for the cards.
  * @author Catalina Rojas
  */
-public interface ICard {
-
+public interface ICard extends Visitable {
     /**
      * Plays a card.
-     * @param trainer the trainer that plays the card.
      */
-    void isPlayed(Trainer trainer);
+    void play();
+
+    /**
+     * Sets the trainer of a card
+     * @param trainer the trainer of the card
+     */
+    void setTrainer(Trainer trainer);
+
+    /**
+     * Gets the trainer of a card
+     * @return trainer
+     */
+    Trainer getTrainer();
 }

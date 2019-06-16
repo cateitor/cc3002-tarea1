@@ -3,9 +3,14 @@ package tcg.psychic;
 import tcg.EnergyCounter;
 import tcg.IAbility;
 import tcg.IPhaseOnePokemon;
+import visitor.Visitor;
 
 import java.util.ArrayList;
 
+/**
+ * Class for a PhaseOnePsychicPokemon
+ * @author Catalina Rojas
+ */
 public class PhaseOnePsychicPokemon extends AbstractPsychicPokemon implements IPhaseOnePokemon {
     /**
      * Creates a new Pokemon
@@ -18,4 +23,10 @@ public class PhaseOnePsychicPokemon extends AbstractPsychicPokemon implements IP
     public PhaseOnePsychicPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAbility> anAttacks) {
         super(aId, anHp, anEnergies, anAttacks);
     }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitPhasePokemon(this);
+    }
+
 }

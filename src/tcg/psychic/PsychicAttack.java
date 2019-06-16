@@ -18,6 +18,7 @@ public class PsychicAttack extends AbstractAbility {
      */
     public PsychicAttack(String aName, int aBaseDamage, int aCost, String aDescriptiveText) {
         super(aName, aBaseDamage, aCost, aDescriptiveText);
+        this.getCost().setPsychicEnergy(aCost);
     }
 
     @Override

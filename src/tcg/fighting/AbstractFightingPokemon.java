@@ -8,6 +8,10 @@ import tcg.psychic.PsychicAttack;
 
 import java.util.ArrayList;
 
+/**
+ * Abstract class for a FightingPokemon
+ * @author Catalina Rojas
+ */
 public abstract class AbstractFightingPokemon extends AbstractPokemon implements IFightingPokemon {
     /**
      * Creates a new Pokemon

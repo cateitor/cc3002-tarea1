@@ -36,5 +36,5 @@ public interface IAbility {
      * stipulated.
      * @return the amount of energy cards
      */
-    int getCost();
+    EnergyCounter getCost();
 }

@@ -3,9 +3,14 @@ package tcg.psychic;
 import tcg.EnergyCounter;
 import tcg.IAbility;
 import tcg.IBasicPokemon;
+import visitor.Visitor;
 
 import java.util.ArrayList;
 
+/**
+ * Class for a BasicPsychicPokemon
+ * @author Catalina Rojas
+ */
 public class BasicPsychicPokemon extends AbstractPsychicPokemon implements IBasicPokemon {
     /**
      * Creates a new Pokemon
@@ -17,5 +22,29 @@ public class BasicPsychicPokemon extends AbstractPsychicPokemon implements IBasi
      */
     public BasicPsychicPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAbility> anAttacks) {
         super(aId, anHp, anEnergies, anAttacks);
+    }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitBasicPokemon(this);
+    }
+
+
+    /**
+     * A basic Pokemon does not have a pre evolution
+     * @param id is set to 0.
+     */
+    @Override
+    public void setPreId(int id){
+        this.setPreId(0);
+    }
+
+    /**
+     * A basic Pokemon does not have a pre evolution
+     * @return 0.
+     */
+    @Override
+    public int getPreId(){
+        return 0;
     }
 }

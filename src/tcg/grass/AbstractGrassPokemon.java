@@ -8,6 +8,10 @@ import tcg.water.WaterAttack;
 
 import java.util.ArrayList;
 
+/**
+ * Abstract class for a GrassPokemon
+ * @author Catalina Rojas
+ */
 public abstract class AbstractGrassPokemon extends AbstractPokemon implements IGrassPokemon {
     /**
      * Creates a new Pokemon

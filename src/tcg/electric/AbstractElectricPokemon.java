@@ -7,6 +7,10 @@ import tcg.fighting.FightingAttack;
 
 import java.util.ArrayList;
 
+/**
+ * The abstract class for an ElectricPokemon.
+ * @author Catalina Rojas
+ */
 public abstract class AbstractElectricPokemon extends AbstractPokemon implements IElectricPokemon {
     /**
      * Creates a new Pokemon
@@ -21,7 +25,8 @@ public abstract class AbstractElectricPokemon extends AbstractPokemon implements
     }
 
     @Override
-    public void receiveFightingAttack(FightingAttack figthingAttack){
-        receiveWeaknessAttack(figthingAttack);
+    public void receiveFightingAttack(FightingAttack fightingAttack){
+        receiveWeaknessAttack(fightingAttack);
     }
+
 }

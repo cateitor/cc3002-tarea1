@@ -1,6 +1,7 @@
 package tcg.electric;
 
 import tcg.AbstractAbility;
+import tcg.EnergyCounter;
 import tcg.IPokemon;
 
 /**
@@ -18,6 +19,7 @@ public class ElectricAttack extends AbstractAbility {
      */
     public ElectricAttack(String aName, int aBaseDamage, int aCost, String aDescriptiveText) {
         super(aName, aBaseDamage, aCost, aDescriptiveText);
+        this.getCost().setElectricEnergy(aCost);
     }
 
     @Override

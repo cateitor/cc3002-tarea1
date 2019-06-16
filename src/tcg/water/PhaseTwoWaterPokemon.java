@@ -3,6 +3,7 @@ package tcg.water;
 import tcg.EnergyCounter;
 import tcg.IAbility;
 import tcg.IPhaseTwoPokemon;
+import visitor.Visitor;
 
 import java.util.ArrayList;
 
@@ -18,4 +19,10 @@ public class PhaseTwoWaterPokemon extends AbstractWaterPokemon implements IPhase
     public PhaseTwoWaterPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAbility> anAttacks) {
         super(aId, anHp, anEnergies, anAttacks);
     }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visitPhasePokemon(this);
+    }
+
 }
