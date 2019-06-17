@@ -124,7 +124,6 @@ public class Trainer {
         activePokemon.selectAttack(index);
     }
 
-
     /**
      * Plays a card from the hand.
      * @param index the index of the card that is played.
@@ -199,14 +198,6 @@ public class Trainer {
 
 
     /**
-     * Accepts a TrainerVisitor.
-     * @param v the visitor accepted.
-     */
-    public void accept(Visitor v){
-        v.visitTrainer(this);
-    }
-
-    /**
      * Sets the selected pokemon.
      * @param index the index of the pokemon, if the index is 6 the pokemon selected is the active pokemon,
      *              else if the index is between 0 and 4, the selected pokemon is one from the bench.
@@ -233,7 +224,14 @@ public class Trainer {
      * @param index index of the card
      */
     public void draw(int index){
-        deck.get(index);
-        deck.remove(index);
+        hand.add(this.getDeck().get(index));
+        this.getDeck().remove(index);
+    }
+
+    public void setHand(){
+        hand = new ArrayList<ICard>();
+        for(int i = 0; i<7; i++) {
+            hand.add(deck.get(0));
+        }
     }
 }

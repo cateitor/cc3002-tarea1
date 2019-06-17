@@ -26,7 +26,7 @@ public class BasicFightingPokemon extends AbstractFightingPokemon implements IBa
 
     @Override
     public void accept(Visitor v) {
-        v.visitBasicPokemon(this);
+        v.visitBasicFightingPokemon(this);
     }
 
 

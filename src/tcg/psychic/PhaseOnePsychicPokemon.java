@@ -26,7 +26,7 @@ public class PhaseOnePsychicPokemon extends AbstractPsychicPokemon implements IP
 
     @Override
     public void accept(Visitor v) {
-        v.visitPhasePokemon(this);
+        v.visitPhaseOnePsychicPokemon(this);
     }
 
 }

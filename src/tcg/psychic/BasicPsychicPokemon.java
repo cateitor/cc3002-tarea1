@@ -26,7 +26,7 @@ public class BasicPsychicPokemon extends AbstractPsychicPokemon implements IBasi
 
     @Override
     public void accept(Visitor v) {
-        v.visitBasicPokemon(this);
+        v.visitBasicPsychicPokemon(this);
     }
 
 

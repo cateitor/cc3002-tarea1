@@ -16,7 +16,7 @@ public abstract class AbstractTrainerCard extends AbstractCard implements ITrain
      * @param name the name of the card
      * @param descriptiveText the descriptive text of the card
      */
-    public void AbstractTrainerCard(String name, String descriptiveText){
+    public AbstractTrainerCard(String name, String descriptiveText){
         this.name=name;
         this.descriptiveText=descriptiveText;
     }

@@ -1,4 +1,4 @@
-# CC3002 - Tarea 2 : Pokemon TCG: Electric Bungaloo
+# CC3002 - Tarea 2 : Pokemon TCG: Electric Boogaloo
 
 Siguiendo la implementación de la tarea 1, en la tarea 2 se añaden nuevos tipos de cartas, pokemon evolucionados y un controlador para el juego.  
 
@@ -10,18 +10,21 @@ El proyecto fue realizado en IntelliJ, por lo que se necesitará para iniciarlo 
 
 A grandes rasgos la mayoría de los nuevos métodos implementados fueron hechos con una clase visitor que, dependiendo de lo que visitaba, deriva lo que se va a hacer en cada caso. 
 Tenemos tres tipos de visitor: 
+
 	* EnergyVisitor: visita los distintos tipos de energía
 	* PokemonVisitor: visita los distintos tipos de pokemon
 	* TrainerCardVisitor: visita las distintas cartas de entrenador. 
 
-* Cada una de estas clases hace Overrides de algunos métodos de la clase abstracta Visitor.  
-* Cada tipo de carta tiene un método play en su clase abstracta quien es el encargado de aceptar el visitor según el tipo de carta. 
+	* Cada una de estas clases hace Overrides de algunos métodos de la clase abstracta Visitor.  
+	* Cada tipo de carta tiene un método play en su clase abstracta quien es el encargado de aceptar el visitor según el tipo de carta. 
 
 **Entrenador**
+
 	* Tiene un mazo de cartas, una pila de descarte y hasta seis cartas premio, las cuales también son sacadas desde el mazo.
 	* Sabe cual es el controlador que se hace cargo de el. 
 
 **Energías**
+
 	* Ahora también pueden agregarse a un pokemon de la banca, por lo que se crea un método para seleccionar el pokemon al que se le agregará la energía antes de jugarla *(setSelectedPokemon)* además puede jugarse una por turno. De esto último estará encargado el controlador del juego que irá viendo los distintos estados según las acciones que se realicen. 
 
 **Evoluciones**
@@ -42,6 +45,7 @@ Tenemos tres tipos de visitor:
 
 
 **Habilidades**
+
 	* Ahora se tienen habilidades y ataques, los ataques son un tipo particular de habilidad y son lo último que puede hacer un jugador antes que se acabe su turno. 
 
 	* Se implementó la habilidad Heal, la cual cura a un pokemon 10 HP si es que sale cara al tirar una moneda. Como puede usarse una vez por turno, el controlador tiene que tener un cambio de estado que avise que ya se ha jugado una habilidad. 
@@ -53,10 +57,15 @@ Tenemos tres tipos de visitor:
 
 **Estadios**
 
-	*
+	* Se implementó el LuckyStadium, el que perminte que una vez durante su turno, el jugador puede lanzar una moneda. Si sale
+	cara, el jugador roba una carta. Para implementarlo se utilizó visitor y state para cambiar el estado del controlador. 
 
 **Soporte**
-	*
+
+	Se implementaron las siguientes cartas, ambas utilizando visitor: 
+	* Professor Cozmo's Discovery: Lanza una moneda. Si sale cara roba las 3 últimas cartas
+	de tu mazo. Si sale sello roba las 2 primeras.
+	* Professor Juniper: Descarta tu mano y roba 7 cartas.
 
 ## Iniciando los test
 

@@ -13,7 +13,6 @@ public abstract class AbstractEnergyCard extends AbstractCard implements IEnergy
     public void play() {
         EnergyVisitor v = new EnergyVisitor();
         this.accept(v);
-        this.getTrainer().getController().playEnergy();
     }
 
 

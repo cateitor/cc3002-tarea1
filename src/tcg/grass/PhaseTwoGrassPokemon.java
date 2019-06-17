@@ -26,7 +26,7 @@ public class PhaseTwoGrassPokemon extends AbstractGrassPokemon implements IPhase
 
     @Override
     public void accept(Visitor v) {
-        v.visitPhasePokemon(this);
+        v.visitPhaseTwoGrassPokemon(this);
     }
 
 }

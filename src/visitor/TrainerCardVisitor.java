@@ -55,6 +55,5 @@ public class TrainerCardVisitor extends Visitor{
         if(coin.result ==1){
             card.getTrainer().draw(0);
         }
-        card.getTrainer().getController().playStadium();
     }
 }

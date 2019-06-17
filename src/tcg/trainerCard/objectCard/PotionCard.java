@@ -10,16 +10,14 @@ import visitor.Visitor;
  */
 public class PotionCard extends AbstractTrainerCard implements ITrainerCard {
     private int heal;
-    private String name;
 
     /**
      * Constructor for the PotionCard
      * @param name the name of the card
-     * @param healing the amount of healing of the card.
      */
-    public PotionCard(String name, int healing){
-        this.name = name;
-        heal = healing;
+    public PotionCard(String name, String descriptiveText){
+        super(name, descriptiveText);
+
     }
 
     /**

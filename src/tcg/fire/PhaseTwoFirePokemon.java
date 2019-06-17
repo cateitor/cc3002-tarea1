@@ -27,7 +27,7 @@ public class PhaseTwoFirePokemon extends AbstractFirePokemon implements IPhaseTw
 
     @Override
     public void accept(Visitor v) {
-        v.visitPhasePokemon(this);
+        v.visitPhaseTwoFirePokemon(this);
     }
 
 }

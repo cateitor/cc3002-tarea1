@@ -1,5 +1,6 @@
 package tcg.trainer;
 
+import controller.Controller;
 import org.junit.Before;
 import org.junit.Test;
 import tcg.*;
@@ -13,9 +14,7 @@ import tcg.fighting.FightingEnergy;
 import tcg.fire.BasicFirePokemon;
 import tcg.fire.FireAttack;
 import tcg.fire.FireEnergy;
-import tcg.grass.BasicGrassPokemon;
-import tcg.grass.GrassAttack;
-import tcg.grass.GrassEnergy;
+import tcg.grass.*;
 import tcg.psychic.BasicPsychicPokemon;
 import tcg.psychic.PsychicAttack;
 import tcg.psychic.PsychicEnergy;
@@ -28,12 +27,13 @@ import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
 public class TrainerTest {
     private Trainer trainer, trainer2, trainer3;
     private ArrayList<ICard> hand;
     private ArrayList<IPokemon> bench;
-    private IPokemon bulbasaur, squirtle, charmander, pikachu, abra, machop, raichu;
+    private IPokemon bulbasaur, squirtle, charmander, pikachu, abra, machop, raichu, ivysaur, venusaur;
     private IEnergy grassEnergy, waterEnergy, fireEnergy, electricEnergy, psychicEnergy, fightingEnergy;
     private IAbility grassAttack, waterAttack, fireAttack, electricAttack, psychicAttack, fightingAttack, fireAttack2;
 
@@ -65,6 +65,13 @@ public class TrainerTest {
 
         ((PhaseOneElectricPokemon) raichu).setPreId(25);
         raichu.getEnergies().setElectricEnergy(0);
+
+        ivysaur = new PhaseOneGrassPokemon(2,90,new EnergyCounter(),new ArrayList<IAbility>(Arrays.asList(grassAttack)));
+        ivysaur.setPreId(1);
+        ivysaur.getEnergies().setGrassEnergy(2);
+        venusaur = new PhaseTwoGrassPokemon(3,150,new EnergyCounter(),new ArrayList<IAbility>(Arrays.asList(grassAttack)));
+        venusaur.setPreId(2);
+        ivysaur.getEnergies().setGrassEnergy(0);
 
         bulbasaur.selectAttack(0);
         squirtle.selectAttack(0);
@@ -161,8 +168,9 @@ public class TrainerTest {
     }
 
     @Test
-    public void PlayPhasePokemonTest(){
+    public void PlayPhaseOnePokemonTest(){
         trainer.setSelectedPokemon(6);
+        assertTrue(!trainer.getSelectedPokemon().isDead());
         trainer.getSelectedPokemon().getEnergies().setElectricEnergy(2);
         trainer.getHand().add(raichu);
         trainer.play(11);
@@ -170,6 +178,50 @@ public class TrainerTest {
         EnergyCounter e = new EnergyCounter();
         e.setElectricEnergy(2);
         assertEquals(e.getEnergies(),trainer.getActivePokemon().getEnergies().getEnergies());
+
+        trainer.addBenchPokemon(raichu);
+        trainer.setSelectedPokemon(0);
+        assertEquals(trainer.getSelectedPokemon(),raichu);
+    }
+
+    @Test
+    public void PlayPhaseTwoPokemonTest(){
+        trainer.setActivePokemon(ivysaur);
+        trainer.setSelectedPokemon(6);
+        trainer.getHand().add(venusaur);
+        trainer.play(11);
+        assertEquals(venusaur,trainer.getActivePokemon());
+    }
+
+
+
+    @Test
+    public void deckTest(){
+        DeckForTest deck = new DeckForTest();
+        DeckForTest deck2 = new DeckForTest();
+        assertNotEquals(deck,deck2);
+        trainer.setDeck(deck.getDeck());
+        assertEquals(trainer.getDeck(),deck.getDeck());
+        assertEquals(60,deck.getDeck().size());
+        trainer.draw(0);
+        assertEquals(12,trainer.getHand().size());
+        trainer.draw(0);
+        assertNotEquals(12,trainer.getHand().size());
+    }
+
+    @Test
+    public void controllerTest(){
+        Controller c = new Controller();
+        trainer.setController(c);
+        assertEquals(trainer.getController(),c);
+    }
+
+    @Test
+    public void setHandTest(){
+        DeckForTest deck = new DeckForTest();
+        trainer.setDeck(deck.getDeck());
+        trainer.setHand();
+        assertNotEquals(trainer.getHand(),hand);
     }
 
 

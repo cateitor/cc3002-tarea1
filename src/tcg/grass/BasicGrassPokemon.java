@@ -26,7 +26,7 @@ public class BasicGrassPokemon extends AbstractGrassPokemon implements IBasicPok
 
     @Override
     public void accept(Visitor v) {
-        v.visitBasicPokemon(this);
+        v.visitBasicGrassPokemon(this);
     }
 
 

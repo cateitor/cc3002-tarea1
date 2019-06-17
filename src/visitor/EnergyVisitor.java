@@ -16,7 +16,6 @@ public class EnergyVisitor extends Visitor{
 
     @Override
     public void visitWaterEnergy(WaterEnergy energy){
-        //si no se ha jugado ninguna otra carta de energia
         energy.getTrainer().getSelectedPokemon().addWaterEnergy(energy);
     }
 

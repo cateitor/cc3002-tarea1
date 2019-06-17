@@ -1,5 +1,6 @@
 package controller;
 
+import tcg.DeckForTest;
 import tcg.ICard;
 import tcg.IPokemon;
 import tcg.trainer.Trainer;
@@ -12,118 +13,27 @@ import java.util.ArrayList;
  * @author Catalina Rojas
  */
 public class Controller {
-    private State state;
+    //private State state;
     private Trainer trainer1;
     private Trainer trainer2;
     private Trainer currentTrainer;
     private Trainer opponent;
-    private boolean drawCard;
     private IPokemon selectedPokemon;
 
     /**
      * The constructor for the Controller
      */
     public Controller(){
-        this.setState(new Turn());
         trainer1 = new Trainer();
         trainer2 = new Trainer();
+        DeckForTest deck1 = new DeckForTest();
+        DeckForTest deck2 = new DeckForTest();
         currentTrainer= trainer1;
         opponent = trainer2;
         trainer1.setController(this);
         trainer2.setController(this);
-    }
-
-    /**
-     * Sets the current state for the controller
-     * @param aState the state
-     */
-    public void setState(State aState){
-        state = aState;
-        state.setController(this);
-    }
-
-    /**
-     * State turn
-     */
-    public void turn(){
-        state.turn();
-    }
-
-    /**
-     * State when a Energy card is played
-     */
-    public void playEnergy(){
-        state.playEnergy();
-    }
-
-    /**
-     * State when a StadiumCard is Played
-     */
-    public void playStadium(){
-        state.playStadium();
-    }
-
-    /**
-     * State when a ability of a pokemon is used
-     */
-    public void useAbility(){
-        currentTrainer.getActivePokemon().getSelectedAttack().attack(opponent.getActivePokemon());
-        state.useAbility();
-    }
-
-    /**
-     * State when the turn of the current player ends
-     */
-    public void endTurn(){
-        state.endTurn();
-    }
-
-    /**
-     * See if a card was drawn
-     * @return Returns true if a card was drawn, false otherwise
-     */
-    public boolean isDrawCard(){
-        return state.isDrawCard();
-    }
-
-    /**
-     * See if is the trainers turn
-     * @return true if its the turn of the player, false otherwise
-     */
-    public boolean isTurn(){
-        return state.isTurn();
-    }
-
-    /**
-     * Sees if a EnergyCard was played
-     * @return true if a energy card was played, false otherwise
-     */
-    public boolean isPlayEnergy(){
-        return state.isPlayEnergy();
-    }
-
-    /**
-     * See if a StadiumCard was played
-     * @return true if a stadium card was played, false otherwise
-     */
-    public boolean isPlayStadium(){
-        return state.isPlayStadium();
-    }
-
-    /**
-     * Sees if the ability of a pokemon was used
-     * @return true if an ability was used, false otherwise
-     */
-    public boolean isUseAbility(){
-        return state.isUseAbility();
-    }
-
-    /**
-     * sees if the turn of the trainer ended
-     * @return true if the turn ended, false otherwise
-     */
-    public boolean isEndTurn(){
-        return state.isEndTurn();
+        trainer1.setDeck(deck1.getDeck());
+        trainer2.setDeck(deck2.getDeck());
     }
 
 
@@ -171,7 +81,7 @@ public class Controller {
     public void drawCard(){
         currentTrainer.getHand().add(currentTrainer.getDeck().get(0));
         currentTrainer.getDeck().remove(0);
-        state.drawCard();
+
     }
 
     /**
@@ -220,19 +130,6 @@ public class Controller {
      */
     public IPokemon seeOpponentActivePokemon(){
         return opponent.getActivePokemon();
-    }
-
-    /**
-     * Sees ALL the pokemons in the game
-     * @return all the pokemons
-     */
-    public ArrayList<IPokemon> seeAllPokemon(){
-        ArrayList<IPokemon> playedPokemon = new ArrayList<IPokemon>();
-        playedPokemon.add(currentTrainer.getActivePokemon());
-        playedPokemon.add(opponent.getActivePokemon());
-        playedPokemon.addAll(currentTrainer.getBench());
-        playedPokemon.addAll(opponent.getBench());
-        return playedPokemon;
     }
 
 

@@ -22,7 +22,7 @@ public class PhaseOneWaterPokemon extends AbstractWaterPokemon implements IPhase
 
     @Override
     public void accept(Visitor v) {
-        v.visitPhasePokemon(this);
+        v.visitPhaseOneWaterPokemon(this);
     }
 
 }

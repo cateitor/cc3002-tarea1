@@ -27,7 +27,7 @@ public class PhaseOneElectricPokemon extends AbstractElectricPokemon implements 
 
     @Override
     public void accept(Visitor v) {
-        v.visitPhasePokemon(this);
+        v.visitPhaseOneElectricPokemon(this);
     }
 
 }

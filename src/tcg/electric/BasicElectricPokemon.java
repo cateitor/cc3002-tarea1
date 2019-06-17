@@ -22,15 +22,7 @@ public class BasicElectricPokemon extends AbstractElectricPokemon implements IBa
      */
     public BasicElectricPokemon(int aId, int anHp, EnergyCounter anEnergies, ArrayList<IAbility> anAttacks) {
         super(aId, anHp, anEnergies, anAttacks);
-    }
-
-    /**
-     * A basic Pokemon does not have a pre evolution
-     * @param id is set to 0.
-     */
-    @Override
-    public void setPreId(int id){
-        this.setPreId(0);
+        setPreId(0);
     }
 
     /**
@@ -44,7 +36,7 @@ public class BasicElectricPokemon extends AbstractElectricPokemon implements IBa
 
     @Override
     public void accept(Visitor v) {
-        v.visitBasicPokemon(this);
+        v.visitBasicElectricPokemon(this);
     }
 
 }

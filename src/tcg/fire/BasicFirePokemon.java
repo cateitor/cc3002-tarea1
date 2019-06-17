@@ -26,7 +26,7 @@ public class BasicFirePokemon extends AbstractFirePokemon implements IBasicPokem
 
     @Override
     public void accept(Visitor v) {
-        v.visitBasicPokemon(this);
+        v.visitBasicFirePokemon(this);
     }
 
 

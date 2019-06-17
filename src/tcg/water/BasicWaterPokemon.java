@@ -22,7 +22,7 @@ public class BasicWaterPokemon extends AbstractWaterPokemon implements IBasicPok
 
     @Override
     public void accept(Visitor v) {
-        v.visitBasicPokemon(this);
+        v.visitBasicWaterPokemon(this);
     }
 
 

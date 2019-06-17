@@ -1,8 +1,11 @@
-package tcg.electric;
+package tcg.tests;
 
 import org.junit.Before;
 import org.junit.Test;
 import tcg.*;
+import tcg.electric.BasicElectricPokemon;
+import tcg.electric.ElectricAttack;
+import tcg.electric.ElectricEnergy;
 import tcg.fighting.BasicFightingPokemon;
 import tcg.fighting.FightingAttack;
 import tcg.fighting.FightingEnergy;
@@ -23,11 +26,9 @@ import visitor.EnergyVisitor;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
-public class ElectricPokemonTest {
+public class PokemonTest {
     private IPokemon bulbasaur, pikachu, charmander, machop, abra, squirtle;
     private IAbility grassAttack, fireAttack, electricAttack, fightingAttack, psychicAttack, waterAttack;
     private IEnergy grassEnergy, electricEnergy, fireEnergy, fightingEnergy, psychicEnergy, waterEnergy;
@@ -156,6 +157,14 @@ public class ElectricPokemonTest {
         pikachu.addAttack(electricAttack);
         pikachu.addAttack(electricAttack);
         assertEquals(4,pikachu.getAttacks().size());
+    }
+
+    @Test
+    public void setPreIdTest(){
+        pikachu.setPreId(20);
+        assertEquals(0,pikachu.getPreId());
+        int id = pikachu.getPreId();
+        assertEquals(0,id);
     }
 
 

@@ -24,6 +24,5 @@ public class ElectricShock extends ElectricAttack {
         if(coin.result == 0){
             aPokemon.receiveElectricAttack(this);
         }
-        aPokemon.getTrainer().getController().endTurn();
     }
 }

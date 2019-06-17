@@ -5,15 +5,15 @@ import visitor.Visitor;
 
 /**
  * Class that Represents a Professor Juniper Card.
+ * @author Catalina Rojas
  */
 public class ProfessorJuniperCard extends AbstractTrainerCard implements ITrainerCard {
-    String name;
 
     /**
      * Constructor for the ProfessorJuniperCard;
      */
-    public ProfessorJuniperCard(){
-        name = "Professor Juniper Card";
+    public ProfessorJuniperCard(String name, String descriptiveText){
+        super(name, descriptiveText);
     }
 
     @Override

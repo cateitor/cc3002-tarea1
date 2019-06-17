@@ -13,7 +13,7 @@ public class Heal extends AbstractAbility {
      * @param aCost            the energy cost of the attack.
      * @param aDescriptiveText the descriptive text of the attack.
      */
-    protected Heal(String aName, int aBaseDamage, int aCost, String aDescriptiveText) {
+    public Heal(String aName, int aBaseDamage, int aCost, String aDescriptiveText) {
         super(aName, aBaseDamage, 0, aDescriptiveText);
     }
 
@@ -23,6 +23,5 @@ public class Heal extends AbstractAbility {
         if(coin.result == 1){
             aPokemon.setDamage(aPokemon.getDamage()-10);
         }
-        aPokemon.getTrainer().getController().useAbility();
     }
 }
