@@ -3,7 +3,7 @@ package tcg.grass;
 import tcg.EnergyCounter;
 import tcg.IAbility;
 import tcg.IBasicPokemon;
-import visitor.Visitor;
+import tcg.Visitor;
 
 import java.util.ArrayList;
 
@@ -29,15 +29,6 @@ public class BasicGrassPokemon extends AbstractGrassPokemon implements IBasicPok
         v.visitBasicGrassPokemon(this);
     }
 
-
-    /**
-     * A basic Pokemon does not have a pre evolution
-     * @param id is set to 0.
-     */
-    @Override
-    public void setPreId(int id){
-        this.setPreId(0);
-    }
 
     /**
      * A basic Pokemon does not have a pre evolution

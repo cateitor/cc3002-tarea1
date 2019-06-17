@@ -1,7 +1,7 @@
 package tcg.grass;
 
 import tcg.*;
-import visitor.Visitor;
+import tcg.Visitor;
 
 /**
  * Class that represents a GrassEnergy.

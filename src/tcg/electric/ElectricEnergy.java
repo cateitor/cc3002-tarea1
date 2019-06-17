@@ -1,8 +1,7 @@
 package tcg.electric;
 
 import tcg.*;
-import visitor.EnergyVisitor;
-import visitor.Visitor;
+import tcg.Visitor;
 
 /**
  *Class that represent an ElectricEnergy.

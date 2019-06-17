@@ -3,7 +3,7 @@ package tcg.electric;
 import tcg.EnergyCounter;
 import tcg.IAbility;
 import tcg.IPhaseTwoPokemon;
-import visitor.Visitor;
+import tcg.Visitor;
 
 import java.util.ArrayList;
 

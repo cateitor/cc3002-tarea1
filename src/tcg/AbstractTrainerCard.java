@@ -1,7 +1,5 @@
 package tcg;
 
-import visitor.TrainerCardVisitor;
-
 /**
  * Abstract class for the TrainerCard
  * When played, this card alters the game stats.

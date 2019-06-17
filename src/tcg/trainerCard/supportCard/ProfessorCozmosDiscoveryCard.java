@@ -2,7 +2,7 @@ package tcg.trainerCard.supportCard;
 
 import tcg.AbstractTrainerCard;
 import tcg.ITrainerCard;
-import visitor.Visitor;
+import tcg.Visitor;
 
 /**
  * Class for a ProfessorCozmosDiscoveryCard

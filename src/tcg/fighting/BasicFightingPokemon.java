@@ -3,7 +3,7 @@ package tcg.fighting;
 import tcg.EnergyCounter;
 import tcg.IAbility;
 import tcg.IBasicPokemon;
-import visitor.Visitor;
+import tcg.Visitor;
 
 import java.util.ArrayList;
 
@@ -27,16 +27,6 @@ public class BasicFightingPokemon extends AbstractFightingPokemon implements IBa
     @Override
     public void accept(Visitor v) {
         v.visitBasicFightingPokemon(this);
-    }
-
-
-    /**
-     * A basic Pokemon does not have a pre evolution
-     * @param id is set to 0.
-     */
-    @Override
-    public void setPreId(int id){
-        this.setPreId(0);
     }
 
     /**

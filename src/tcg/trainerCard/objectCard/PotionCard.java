@@ -2,7 +2,7 @@ package tcg.trainerCard.objectCard;
 
 import tcg.AbstractTrainerCard;
 import tcg.ITrainerCard;
-import visitor.Visitor;
+import tcg.Visitor;
 
 /**
  * Class for a Potion Card

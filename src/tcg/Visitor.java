@@ -1,4 +1,4 @@
-package visitor;
+package tcg;
 
 import controller.Controller;
 import tcg.*;
@@ -37,31 +37,6 @@ import tcg.water.WaterEnergy;
  * @author Catalina Rojas
  */
 public abstract class Visitor {
-
-    /**
-     * Visits a Trainer
-     * @param trainer the trainer visited
-     */
-    public void visitTrainer(Trainer trainer){}
-
-    /**
-     * Visits the Controller
-     * @param controller the controller
-     */
-    public void visitController(Controller controller) {}
-
-    /**
-     * Visits a BasicPokemon
-     * @param pokemon the pokemon visited
-     */
-    public void visitBasicPokemon(IPokemon pokemon){}
-
-    /**
-     * Visits a PhasePokemon (one or two)
-     * @param pokemon the pokemon visited
-     */
-    public void visitPhasePokemon(IPokemon pokemon) {
-    }
 
     /**
      * Visits a WaterEnergy

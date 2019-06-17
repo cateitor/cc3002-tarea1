@@ -1,7 +1,6 @@
 package tcg;
 
 import tcg.trainer.Trainer;
-import visitor.Visitable;
 
 /**
  * Common interface for the cards.

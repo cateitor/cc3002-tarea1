@@ -4,7 +4,6 @@ import controller.Controller;
 import tcg.IAbility;
 import tcg.ICard;
 import tcg.IPokemon;
-import visitor.Visitor;
 
 import java.util.ArrayList;
 import java.util.Stack;
@@ -22,12 +21,13 @@ public class Trainer {
     private ArrayList<ICard> deck;
     private Stack<ICard> discardPile;
     private IPokemon selectedPokemon;
+    private boolean isActivePokemon;
 
     /**
      * Creates a new Trainer
      */
     public Trainer(){
-        activePokemon = null;
+        isActivePokemon = false;
         hand = new ArrayList<ICard>();
         bench= new ArrayList<IPokemon>();
         discardPile= new Stack<ICard>();
@@ -48,6 +48,15 @@ public class Trainer {
      */
     public void setActivePokemon(IPokemon activePokemon) {
         this.activePokemon = activePokemon;
+        isActivePokemon =true;
+    }
+
+    /**
+     * See if there is an active pokemon
+     * @return true if it is an active pokemon in the game, false otherwise.
+     */
+    public boolean isActivePokemon(){
+        return isActivePokemon;
     }
 
     /**
@@ -129,9 +138,8 @@ public class Trainer {
      * @param index the index of the card that is played.
      */
     public void play(int index){
-        this.getCard(index).setTrainer(this);
-        this.getCard(index).play();
-        hand.remove(this.getCard(index));
+        this.hand.get(index).setTrainer(this);
+        this.hand.get(index).play();
     }
 
     /**
@@ -204,7 +212,7 @@ public class Trainer {
      */
     public void setSelectedPokemon(int index) {
         if (index == 6) {
-            selectedPokemon = activePokemon;
+            selectedPokemon = this.getActivePokemon();
         } else {
             selectedPokemon = bench.get(index);
         }
@@ -228,6 +236,10 @@ public class Trainer {
         this.getDeck().remove(index);
     }
 
+
+    /**
+     * sets hand for the trainer
+     */
     public void setHand(){
         hand = new ArrayList<ICard>();
         for(int i = 0; i<7; i++) {

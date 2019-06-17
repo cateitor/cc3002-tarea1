@@ -125,6 +125,7 @@ public class AttackTest {
 
     @Test
     public void FightingAttackTest(){
+        assertNotEquals(fightingAttack, new FightingAttack("Kick", 20, 1, "It hurts!"));
         fightingAttack.attack(charmander);
         fightingAttack.attack(bulbasaur);
         fightingAttack.attack(squirtle);

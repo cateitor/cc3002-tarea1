@@ -3,7 +3,7 @@ package tcg.psychic;
 import tcg.EnergyCounter;
 import tcg.IAbility;
 import tcg.IPhaseOnePokemon;
-import visitor.Visitor;
+import tcg.Visitor;
 
 import java.util.ArrayList;
 

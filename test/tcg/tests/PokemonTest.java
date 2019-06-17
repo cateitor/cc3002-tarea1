@@ -21,7 +21,6 @@ import tcg.psychic.PsychicEnergy;
 import tcg.water.BasicWaterPokemon;
 import tcg.water.WaterAttack;
 import tcg.water.WaterEnergy;
-import visitor.EnergyVisitor;
 
 import java.util.ArrayList;
 import java.util.Arrays;

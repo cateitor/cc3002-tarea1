@@ -1,4 +1,4 @@
-package visitor;
+package tcg;
 
 /**
  * Interface that defines what class is visitable if it is implemented.

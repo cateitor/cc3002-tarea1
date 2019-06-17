@@ -4,23 +4,14 @@ import controller.Controller;
 import org.junit.Before;
 import org.junit.Test;
 import tcg.*;
-import tcg.electric.BasicElectricPokemon;
-import tcg.electric.ElectricAttack;
-import tcg.electric.ElectricEnergy;
-import tcg.electric.PhaseOneElectricPokemon;
-import tcg.fighting.BasicFightingPokemon;
-import tcg.fighting.FightingAttack;
-import tcg.fighting.FightingEnergy;
-import tcg.fire.BasicFirePokemon;
-import tcg.fire.FireAttack;
-import tcg.fire.FireEnergy;
+import tcg.ElectricShock;
+import tcg.Heal;
+import tcg.electric.*;
+import tcg.fighting.*;
+import tcg.fire.*;
 import tcg.grass.*;
-import tcg.psychic.BasicPsychicPokemon;
-import tcg.psychic.PsychicAttack;
-import tcg.psychic.PsychicEnergy;
-import tcg.water.BasicWaterPokemon;
-import tcg.water.WaterAttack;
-import tcg.water.WaterEnergy;
+import tcg.psychic.*;
+import tcg.water.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,8 +25,10 @@ public class TrainerTest {
     private ArrayList<ICard> hand;
     private ArrayList<IPokemon> bench;
     private IPokemon bulbasaur, squirtle, charmander, pikachu, abra, machop, raichu, ivysaur, venusaur;
+    private IPokemon charmeleon,charizard,mareep,ampharos,flaaffy,wartortle,blastoise,kadabra,alakazam,machoke,machamp;
     private IEnergy grassEnergy, waterEnergy, fireEnergy, electricEnergy, psychicEnergy, fightingEnergy;
-    private IAbility grassAttack, waterAttack, fireAttack, electricAttack, psychicAttack, fightingAttack, fireAttack2;
+    private IAbility grassAttack, waterAttack, fireAttack, electricAttack, psychicAttack, fightingAttack, fireAttack2,heal,electricShock;
+    private ArrayList<ICard> hand2;
 
     @Before
     public void setUp(){
@@ -54,6 +47,8 @@ public class TrainerTest {
         psychicAttack = new PsychicAttack("Zen Force", 30, 2, "Ohmm");
         waterAttack = new WaterAttack("Rain Blow", 30, 1, "It's raining!");
         fireAttack2 = new FireAttack("Burn",20,1,"It burned the pokemon!");
+        heal = new Heal("Heal",30,0,"Heals your damage");
+        electricShock = new ElectricShock("ElectricShock",30,2,"SHOOK");
 
         charmander = new BasicFirePokemon(4,70, new EnergyCounter(), new ArrayList<IAbility>(Arrays.asList(fireAttack2)));
         bulbasaur = new BasicGrassPokemon(1, 70, new EnergyCounter(), new ArrayList<IAbility>(Arrays.asList(grassAttack)));
@@ -84,9 +79,40 @@ public class TrainerTest {
         abra.getEnergies().setPsychicEnergy(2);
         machop.getEnergies().setFightingEnergy(2);
 
+        heal = new Heal("Heal",30,0,"Heals your damage");
+        electricShock = new ElectricShock("ElectricShock",30,2,"SHOOK");
+
+
+        charmeleon = new PhaseOneFirePokemon(5,90,new EnergyCounter(),new ArrayList<IAbility>(Arrays.asList(fireAttack)));
+        charmeleon.setPreId(4);
+        charizard = new PhaseTwoFirePokemon(6,180, new EnergyCounter(), new ArrayList<IAbility>(Arrays.asList(fireAttack)));
+        charizard.setPreId(5);
+
+        wartortle = new PhaseOneWaterPokemon(8, 90, new EnergyCounter(), new ArrayList<IAbility>(Arrays.asList(waterAttack)));
+        wartortle.setPreId(7);
+        blastoise = new PhaseTwoWaterPokemon(9,150, new EnergyCounter(),new ArrayList<IAbility>(Arrays.asList(waterAttack)));
+        blastoise.setPreId(8);
+
+        mareep = new BasicElectricPokemon(179,70,new EnergyCounter(),new ArrayList<IAbility>(Arrays.asList(electricAttack)));
+        flaaffy = new PhaseOneElectricPokemon(180, 90,new EnergyCounter(),new ArrayList<IAbility>(Arrays.asList(electricAttack,electricShock)));
+        flaaffy.setPreId(179);
+        ampharos = new PhaseTwoElectricPokemon(181, 140, new EnergyCounter(),new ArrayList<IAbility>(Arrays.asList(electricAttack,electricShock)));
+        ampharos.setPreId(180);
+
+        kadabra = new PhaseOnePsychicPokemon(64, 90, new EnergyCounter(), new ArrayList<IAbility>(Arrays.asList(psychicAttack)));
+        kadabra.setPreId(63);
+        alakazam = new PhaseTwoPsychicPokemon(65, 150, new EnergyCounter(),new ArrayList<IAbility>(Arrays.asList(psychicAttack)));
+        alakazam.setPreId(64);
+
+        machoke = new PhaseOneFightingPokemon(67,90, new EnergyCounter(), new ArrayList<IAbility>(Arrays.asList(fightingAttack)));
+        machoke.setPreId(66);
+        machamp = new PhaseTwoFightingPokemon(68,150,new EnergyCounter(), new ArrayList<IAbility>(Arrays.asList(fightingAttack)));
+        machamp.setPreId(67);
+
 
        hand = new ArrayList<ICard>(Arrays.asList(bulbasaur,squirtle,pikachu,
                abra,machop,fireEnergy,grassEnergy,waterEnergy,electricEnergy,psychicEnergy,fightingEnergy));
+       hand2 = new ArrayList<ICard>(Arrays.asList(abra,charmander));
 
        bench = new ArrayList<IPokemon>();
 
@@ -125,6 +151,23 @@ public class TrainerTest {
     }
 
     @Test
+    public void setPreIdBasicPokemonTest(){
+        pikachu.setPreId(12);
+        abra.setPreId(11);
+        bulbasaur.setPreId(45);
+        squirtle.setPreId(56);
+        charmander.setPreId(76);
+        machop.setPreId(44);
+
+        assertEquals(0,pikachu.getPreId());
+        assertEquals(0,abra.getPreId());
+        assertEquals(0,bulbasaur.getPreId());
+        assertEquals(0,squirtle.getPreId());
+        assertEquals(0,charmander.getPreId());
+        assertEquals(0,machop.getPreId());
+    }
+
+    @Test
     public void playBasicPokemonTest(){
         trainer3 = new Trainer();
         trainer3.setHand(hand);
@@ -133,11 +176,25 @@ public class TrainerTest {
         assertEquals(bulbasaur,trainer3.getActivePokemon());
         trainer3.play(0);
         assertEquals(1,trainer3.getBench().size());
+        assertEquals(squirtle,trainer3.getBench().get(0));
         assertNotEquals(squirtle,trainer3.getHand().get(0));
+        trainer3.play(0);
+        assertEquals(pikachu,trainer3.getBench().get(1));
+        trainer3.play(1);
+        assertEquals(machop,trainer3.getBench().get(2));
+        trainer3.setHand(hand2);
+        trainer3.play(0);
+        assertEquals(abra,trainer3.getBench().get(3));
+        trainer3.play(0);
+        assertEquals(charmander,trainer3.getBench().get(4));
+
+
     }
 
     @Test
     public void playEnergyTest(){
+        Controller c = new Controller();
+        trainer.setController(c);
         FireEnergy f = new FireEnergy();
         trainer.setSelectedPokemon(6);
         trainer.play(8);
@@ -182,15 +239,65 @@ public class TrainerTest {
         trainer.addBenchPokemon(raichu);
         trainer.setSelectedPokemon(0);
         assertEquals(trainer.getSelectedPokemon(),raichu);
+
+        ArrayList<IPokemon> bench2 = new ArrayList<>(Arrays.asList(abra,machop,squirtle,charmander,bulbasaur));
+        ArrayList<ICard> hand3 = new ArrayList<>(Arrays.asList(kadabra,machoke,wartortle,charmeleon,ivysaur));
+        trainer.setBench(bench2);
+        trainer.setHand(hand3);
+        trainer.setSelectedPokemon(0);
+        assertEquals(abra,trainer.getSelectedPokemon());
+        trainer.play(0);
+        assertEquals(kadabra,trainer.getBench().get(0));
+        trainer.setSelectedPokemon(1);
+        assertEquals(machop,trainer.getSelectedPokemon());
+        assertEquals(machoke,trainer.getHand().get(0));
+        trainer.play(0);
+        assertEquals(machoke,trainer.getBench().get(1));
+
+        trainer.setSelectedPokemon(2);
+        trainer.play(0);
+        assertEquals(wartortle,trainer.getBench().get(2));
+
+        trainer.setSelectedPokemon(3);
+        trainer.play(0);
+        assertEquals(charmeleon,trainer.getBench().get(3));
+
+        trainer.setSelectedPokemon(4);
+        trainer.play(0);
+        assertEquals(ivysaur,trainer.getBench().get(4));
+
+
+
+
     }
 
     @Test
     public void PlayPhaseTwoPokemonTest(){
-        trainer.setActivePokemon(ivysaur);
+        ArrayList<IPokemon> bench3 = new ArrayList<>(Arrays.asList(kadabra,machoke,wartortle,charmeleon,ivysaur));
+        ArrayList<ICard> hand4 = new ArrayList<>(Arrays.asList(alakazam,machamp,blastoise,charizard,venusaur));
+        trainer.setBench(bench3);
+        trainer.setHand(hand4);
+        trainer.setSelectedPokemon(0);
+        trainer.play(0);
+        assertEquals(alakazam,trainer.getBench().get(0));
+        trainer.setSelectedPokemon(1);
+        trainer.play(0);
+        assertEquals(machamp,trainer.getBench().get(1));
+        trainer.setSelectedPokemon(2);
+        trainer.play(0);
+        assertEquals(blastoise,trainer.getBench().get(2));
+        trainer.setSelectedPokemon(3);
+        trainer.play(0);
+        assertEquals(charizard,trainer.getBench().get(3));
+        trainer.setSelectedPokemon(4);
+        trainer.play(0);
+        assertEquals(venusaur,trainer.getBench().get(4));
+
+        trainer.setActivePokemon(flaaffy);
+        trainer.setHand(new ArrayList<ICard>(Arrays.asList(ampharos)));
         trainer.setSelectedPokemon(6);
-        trainer.getHand().add(venusaur);
-        trainer.play(11);
-        assertEquals(venusaur,trainer.getActivePokemon());
+        trainer.play(0);
+        assertEquals(ampharos,trainer.getActivePokemon());
     }
 
 

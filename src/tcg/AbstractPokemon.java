@@ -13,7 +13,6 @@ import tcg.psychic.PsychicEnergy;
 import tcg.trainer.Trainer;
 import tcg.water.WaterAttack;
 import tcg.water.WaterEnergy;
-import visitor.PokemonVisitor;
 
 import java.util.ArrayList;
 
@@ -28,7 +27,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon{
     private int damage;
     private EnergyCounter energyCounter;
     private ArrayList<IAbility> attacks;
-    private IAbility selectedAttack=null;
+    private IAbility selectedAttack;
     private int preId;
 
     /**

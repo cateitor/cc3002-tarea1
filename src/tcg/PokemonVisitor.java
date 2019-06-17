@@ -1,7 +1,5 @@
-package visitor;
+package tcg;
 
-import tcg.IEnergy;
-import tcg.IPokemon;
 import tcg.electric.BasicElectricPokemon;
 import tcg.electric.PhaseOneElectricPokemon;
 import tcg.electric.PhaseTwoElectricPokemon;
@@ -28,9 +26,9 @@ import tcg.water.PhaseTwoWaterPokemon;
  */
 public class PokemonVisitor extends Visitor {
 
-    @Override
+
     public void visitBasicPokemon(IPokemon pokemon){
-        if(pokemon.getTrainer().getActivePokemon()==null){
+        if(!pokemon.getTrainer().isActivePokemon()){
             pokemon.getTrainer().setActivePokemon(pokemon);
         }
         else{
@@ -39,9 +37,10 @@ public class PokemonVisitor extends Visitor {
         pokemon.getTrainer().getHand().remove(pokemon);
     }
 
-    @Override
+
     public void visitPhasePokemon(IPokemon pokemon){
         Trainer trainer = pokemon.getTrainer();
+        int index = trainer.getBench().indexOf(trainer.getSelectedPokemon());
         if(trainer.getSelectedPokemon().getId() == pokemon.getPreId()){
             trainer.getDiscardPile().add(trainer.getSelectedPokemon());
             pokemon.setEnergyCounter(trainer.getSelectedPokemon().getEnergies());
@@ -49,10 +48,10 @@ public class PokemonVisitor extends Visitor {
                 trainer.setActivePokemon(pokemon);
             }
             else{
-                trainer.getBench().remove(trainer.getSelectedPokemon());
-                trainer.getBench().add(pokemon);
+                trainer.getBench().set(index,pokemon);
             }
         }
+        pokemon.getTrainer().getHand().remove(pokemon);
     }
 
     @Override
@@ -132,7 +131,7 @@ public class PokemonVisitor extends Visitor {
 
     @Override
     public void visitBasicWaterPokemon(BasicWaterPokemon basicWaterPokemon) {
-        this.visitBasicPokemon(basicWaterPokemon);
+        visitBasicPokemon(basicWaterPokemon);
     }
 
     @Override

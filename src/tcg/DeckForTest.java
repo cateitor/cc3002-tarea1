@@ -1,7 +1,5 @@
 package tcg;
 
-import tcg.ability.ElectricShock;
-import tcg.ability.Heal;
 import tcg.electric.*;
 import tcg.fighting.*;
 import tcg.fire.*;
@@ -13,10 +11,8 @@ import tcg.trainerCard.supportCard.ProfessorCozmosDiscoveryCard;
 import tcg.trainerCard.supportCard.ProfessorJuniperCard;
 import tcg.water.*;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 
 /**

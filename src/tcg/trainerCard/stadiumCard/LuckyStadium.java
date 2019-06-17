@@ -1,7 +1,7 @@
 package tcg.trainerCard.stadiumCard;
 
 import tcg.AbstractTrainerCard;
-import visitor.Visitor;
+import tcg.Visitor;
 
 /**
  * Class for a LuckyStadiumCard

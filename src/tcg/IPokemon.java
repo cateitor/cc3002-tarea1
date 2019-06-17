@@ -1,7 +1,6 @@
 package tcg;
 
 import tcg.trainer.Trainer;
-import visitor.Visitor;
 import tcg.electric.ElectricAttack;
 import tcg.electric.ElectricEnergy;
 import tcg.fighting.FightingAttack;

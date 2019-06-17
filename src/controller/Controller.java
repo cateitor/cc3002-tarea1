@@ -4,7 +4,6 @@ import tcg.DeckForTest;
 import tcg.ICard;
 import tcg.IPokemon;
 import tcg.trainer.Trainer;
-import visitor.Visitor;
 
 import java.util.ArrayList;
 
@@ -19,6 +18,10 @@ public class Controller {
     private Trainer currentTrainer;
     private Trainer opponent;
     private IPokemon selectedPokemon;
+    private IPokemon attackedPokemon;
+    private boolean drawCard = false;
+    private boolean energyCard = false;
+    private boolean luckyStadium = false;
 
     /**
      * The constructor for the Controller
@@ -52,6 +55,8 @@ public class Controller {
         Trainer trainer = currentTrainer;
         currentTrainer = opponent;
         opponent = trainer;
+        drawCard = false;
+        energyCard = false;
     }
 
     /**
@@ -60,11 +65,7 @@ public class Controller {
      *              the selectedPokemon is one from the bench
      */
     public void setSelectedPokemon(int index) {
-        if (index == 6) {
-            selectedPokemon = currentTrainer.getActivePokemon();
-        } else if (index <6) {
-            selectedPokemon = currentTrainer.getBench().get(index);
-        }
+        currentTrainer.setSelectedPokemon(index);
     }
 
     /**
@@ -72,17 +73,45 @@ public class Controller {
      * @return selectedPokemon
      */
     public IPokemon getSelectedPokemon(){
-        return selectedPokemon;
+        return currentTrainer.getSelectedPokemon();
     }
 
     /**
      * Draws a card from the deck
      */
     public void drawCard(){
-        currentTrainer.getHand().add(currentTrainer.getDeck().get(0));
-        currentTrainer.getDeck().remove(0);
-
+        if(!isDrawCard()){
+            currentTrainer.getHand().add(currentTrainer.getDeck().get(0));
+            currentTrainer.getDeck().remove(0);
+        }
+        drawCard = true;
     }
+
+    /**
+     * sees if a card was drawn
+     * @return true if its was drawn, false otherwise
+     */
+    public boolean isDrawCard(){
+        return drawCard;
+    }
+
+    /**
+     * Sees if an Energy Card was already played
+     * @return true if it was played, false otherwise
+     */
+    public boolean isEnergyCard(){
+        return energyCard;
+    }
+
+    /**
+     * Sees if a LuckyStadiumCard was played
+     * @return true if it was played, false otherwise
+     */
+    public boolean isLuckyStadium(){
+        return luckyStadium;
+    }
+
+
 
     /**
      * See the cards of the currentTrainer's hand
@@ -97,7 +126,7 @@ public class Controller {
      * @param index the index of the card played
      */
     public void playCard(int index){
-        currentTrainer.getHand().get(index).play();
+        currentTrainer.play(index);
     }
 
     /**
@@ -139,5 +168,43 @@ public class Controller {
      */
     public Trainer opponentTrainer() {
         return opponent;
+    }
+
+    /**
+     * Sets if the EnergyCard was played or not
+     * @param b true if it was played, false otherwise
+     */
+    public void setEnergyCard(boolean b) {
+        energyCard = b;
+    }
+
+    /**
+     * Sets if a LuckyStadiumCard was Played
+     * @param b true if it was played, false otherwise.
+     */
+    public void setLuckyStadium(boolean b) {
+        luckyStadium = b;
+    }
+
+    /**
+     * Uses the selectedAbility.
+     */
+    public void useAbility(){
+        currentTrainer.getActivePokemon().getSelectedAttack().attack(currentTrainer.getSelectedPokemon());
+    }
+
+    /**
+     * Sets the pokemon that the ability will be used.
+     */
+    public void setAttackedPokemon(IPokemon pokemon) {
+        attackedPokemon = pokemon;
+    }
+
+    /**
+     * Returns the selected atacked Pokemon
+     * @return attacked pokemon
+     */
+    public IPokemon getAttackedPokemon(){
+        return attackedPokemon;
     }
 }

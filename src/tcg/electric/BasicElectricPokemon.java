@@ -1,6 +1,6 @@
 package tcg.electric;
 
-import visitor.Visitor;
+import tcg.Visitor;
 import tcg.EnergyCounter;
 import tcg.IAbility;
 import tcg.IBasicPokemon;

@@ -1,10 +1,11 @@
-package tcg.ability;
+package tcg;
 
 import tcg.AbstractAbility;
 import tcg.FlipCoin;
 import tcg.IPokemon;
+import tcg.electric.ElectricAttack;
 
-public class Heal extends AbstractAbility {
+public class ElectricShock extends ElectricAttack {
     /**
      * Creates a new attack.
      *
@@ -13,15 +14,15 @@ public class Heal extends AbstractAbility {
      * @param aCost            the energy cost of the attack.
      * @param aDescriptiveText the descriptive text of the attack.
      */
-    public Heal(String aName, int aBaseDamage, int aCost, String aDescriptiveText) {
-        super(aName, aBaseDamage, 0, aDescriptiveText);
+    public ElectricShock(String aName, int aBaseDamage, int aCost, String aDescriptiveText) {
+        super(aName, aBaseDamage, aCost, aDescriptiveText);
     }
 
     @Override
     public void attack(IPokemon aPokemon) {
         FlipCoin coin = new FlipCoin();
-        if(coin.result == 1){
-            aPokemon.setDamage(aPokemon.getDamage()-10);
+        if(coin.result == 0){
+            aPokemon.receiveElectricAttack(this);
         }
     }
 }
