@@ -1,1 +1,12 @@
-visitor
+controller
+tcg
+tcg.electric
+tcg.fighting
+tcg.fire
+tcg.grass
+tcg.psychic
+tcg.trainer
+tcg.trainerCard.objectCard
+tcg.trainerCard.stadiumCard
+tcg.trainerCard.supportCard
+tcg.water

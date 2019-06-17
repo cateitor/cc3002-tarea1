@@ -232,7 +232,7 @@ public abstract class AbstractPokemon extends AbstractCard implements IPokemon{
 
     /**
      * Sets the EnergyCounter for the Pokemon
-     * @param energyCounter
+     * @param energyCounter the energyCounter.
      */
     public void setEnergyCounter(EnergyCounter energyCounter){
         this.energyCounter = energyCounter;

@@ -10,7 +10,9 @@ import tcg.Visitor;
 public class ProfessorJuniperCard extends AbstractTrainerCard implements ITrainerCard {
 
     /**
-     * Constructor for the ProfessorJuniperCard;
+     * Constructor for the ProfessorJuniperCard
+     * @param name the name of the card
+     * @param descriptiveText the descriptive text of the card
      */
     public ProfessorJuniperCard(String name, String descriptiveText){
         super(name, descriptiveText);

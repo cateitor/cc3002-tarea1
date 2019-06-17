@@ -14,6 +14,7 @@ public class PotionCard extends AbstractTrainerCard implements ITrainerCard {
     /**
      * Constructor for the PotionCard
      * @param name the name of the card
+     * @param  descriptiveText the descriptive text of the card
      */
     public PotionCard(String name, String descriptiveText){
         super(name, descriptiveText);
@@ -22,7 +23,7 @@ public class PotionCard extends AbstractTrainerCard implements ITrainerCard {
 
     /**
      * Sets the amount of healing of the potion card.
-     * @param heal
+     * @param heal the amount that can heal
      */
     public void setHeal(int heal){
         this.heal= heal;

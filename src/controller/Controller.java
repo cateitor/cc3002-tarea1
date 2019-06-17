@@ -195,6 +195,7 @@ public class Controller {
 
     /**
      * Sets the pokemon that the ability will be used.
+     * @param pokemon the pokemon that the ability is used
      */
     public void setAttackedPokemon(IPokemon pokemon) {
         attackedPokemon = pokemon;

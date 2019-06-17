@@ -118,7 +118,7 @@ public class EnergyCounter {
     /**
      * Sees if the amount of energies is greater than the other
      * @param other the other EnergyCounter
-     * @return
+     * @return true if is greather than, false otherwise
      */
     public boolean greaterThan(EnergyCounter other) {
         for (EnergyType type : EnergyType.values()) {
@@ -139,8 +139,8 @@ public class EnergyCounter {
 
     /**
      * checks if a EnergyCounter equals another
-     * @param obj
-     * @return
+     * @param obj the object that compares to this
+     * @return true if it is equals, false otherwise
      */
     public boolean equals(Object obj) {
         return obj instanceof EnergyCounter && ((EnergyCounter) obj).energies == energies;

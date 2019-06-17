@@ -8,6 +8,7 @@ public interface IEnergy extends ICard{
 
     /**
      * Plays a energy card over Trainer's active Pokemon
+     * @param pokemon the pokemon that the energy is added
      */
     public void addEnergyToPokemon(IPokemon pokemon);
 
